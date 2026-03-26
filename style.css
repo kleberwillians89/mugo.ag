@@ -1289,3 +1289,14 @@ html, body {
     object-position: center !important;
   }
 }
+
+@media (max-width: 767px) {
+  .hero-video-wrap {
+    background: transparent !important;
+  }
+
+  .hero-video {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
