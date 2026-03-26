@@ -1286,6 +1286,13 @@ button {
     display: block !important;
   }
 }
+@media (max-width: 767px) {
+  .hero-video {
+    object-fit: contain !important;
+    transform: scale(1.22) !important;
+    transform-origin: center 42% !important;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
