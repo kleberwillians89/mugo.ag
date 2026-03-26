@@ -1290,7 +1290,7 @@ button {
   .hero-video {
     object-fit: contain !important;
     transform: scale(1.22) !important;
-    transform-origin: center 42% !important;
+    transform-origin: center 50% !important;
   }
 }
 
