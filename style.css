@@ -652,8 +652,8 @@ button {
 
   #plataforma .plataforma-here {
     position: relative !important;
-    left: auto !important;
-    top: auto !important;
+    left: 15 !important;
+    top: 15 !important;
     margin: 0 auto 16px;
     width: 100%;
     text-align: left;
@@ -724,9 +724,11 @@ button {
   }
 
   #plataforma .plataforma-label-brand {
-    left: 44% !important;
-    top: 156px !important;
-    font-size: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 198px !important;
+    font-size: 24px !important;
+    text-align: center !important;
   }
 
   #sobre-nos {
@@ -1020,8 +1022,8 @@ button {
 
   #plataforma .plataforma-question {
     position: absolute !important;
-    right: 0 !important;
-    top: 365px !important;
+    right: 15 !important;
+    top: 400px !important;
     margin: 0 !important;
     width: 132px !important;
     text-align: right !important;
