@@ -1004,72 +1004,92 @@ button {
   }
 
   #plataforma .plataforma-layout {
-    min-height: 500px;
+    min-height: 560px;
+    position: relative !important;
   }
 
-  #plataforma .plataforma-here,
-  #plataforma .plataforma-question {
-    margin: 0 auto 10px;
-    width: auto;
-    text-align: center;
+  #plataforma .plataforma-here {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    text-align: left !important;
+    font-size: 18px !important;
   }
 
   #plataforma .plataforma-question {
-    margin-bottom: 16px;
+    position: absolute !important;
+    right: 0 !important;
+    top: 365px !important;
+    margin: 0 !important;
+    width: 132px !important;
+    text-align: right !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
   }
 
   #plataforma .plataforma-circles {
-    width: 340px;
-    max-width: 100%;
-    height: 300px;
+    width: 100%;
+    max-width: 390px;
+    height: 390px;
+    margin: 56px auto 0;
+    position: relative !important;
+    display: block;
   }
 
   #plataforma .plataforma-ring {
-    width: 180px !important;
-    height: 180px !important;
+    width: 220px !important;
+    height: 220px !important;
   }
 
   #plataforma .plataforma-ring-1 {
     left: 0 !important;
-    top: 112px !important;
+    top: 150px !important;
   }
 
   #plataforma .plataforma-ring-2 {
-    left: 160px !important;
-    top: 112px !important;
+    left: 170px !important;
+    top: 150px !important;
   }
 
   #plataforma .plataforma-ring-3 {
-    left: 80px !important;
-    top: 20px !important;
+    left: 85px !important;
+    top: 18px !important;
   }
 
   #plataforma .plataforma-label {
-    font-size: 16px !important;
+    font-size: 17px !important;
     line-height: 1.2 !important;
+    white-space: normal !important;
   }
 
   #plataforma .plataforma-label-ai {
-    left: 14px !important;
-    top: 168px !important;
-    width: 120px;
+    left: 28px !important;
+    top: 248px !important;
+    width: 125px !important;
+    text-align: center !important;
   }
 
   #plataforma .plataforma-label-social {
-    left: 192px !important;
-    top: 188px !important;
-    width: 120px;
+    left: 228px !important;
+    top: 258px !important;
+    width: 125px !important;
+    text-align: center !important;
   }
 
   #plataforma .plataforma-label-automation {
-    left: 104px !important;
-    top: 40px !important;
+    left: 123px !important;
+    top: 72px !important;
+    width: 145px !important;
+    text-align: center !important;
   }
 
   #plataforma .plataforma-label-brand {
-    left: 134px !important;
-    top: 126px !important;
+    left: 155px !important;
+    top: 198px !important;
     font-size: 24px !important;
+    text-align: center !important;
   }
 
   #sobre-nos {
@@ -1256,6 +1276,17 @@ button {
   }
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @media (max-width: 767px) {
   .hero-section {
     height: auto !important;
@@ -1282,140 +1313,7 @@ button {
     height: 100% !important;
     object-fit: contain !important;
     object-position: center center !important;
-    transform: scale(1.3) !important;
-    display: block !important;
-  }
-}
-@media (max-width: 767px) {
-  .hero-video {
-    object-fit: contain !important;
-    transform: scale(1.26) !important;
-    transform-origin: center 50% !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-video {
-    object-fit: contain !important;
     transform: scale(1.18) translateY(-32px) !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-@media (max-width: 767px) {
-
-  /* ↓ diminui levemente os círculos */
-  #plataforma .plataforma-ring {
-    width: 210px !important;
-    height: 210px !important;
-  }
-
-  /* ↓ ajusta posições dos círculos */
-  #plataforma .plataforma-ring-1 {
-    left: 0px !important;
-    top: 160px !important;
-  }
-
-  #plataforma .plataforma-ring-2 {
-    left: 190px !important;
-    top: 160px !important;
-  }
-
-  #plataforma .plataforma-ring-3 {
-    left: 95px !important;
-    top: 30px !important;
-  }
-
-  /* ↓ centraliza melhor o Mugô */
-  #plataforma .plataforma-label-brand {
-    left: 150px !important;
-    top: 190px !important;
-    font-size: 22px !important;
-  }
-
-  /* ↓ afasta o texto da direita (problema principal) */
-  #plataforma .plataforma-question {
-    right: -10px !important;
-    top: 340px !important;
-    width: 140px !important;
-    font-size: 18px !important;
-    line-height: 1.2 !important;
-  }
-
-  /* ↓ pequeno ajuste no texto da esquerda */
-  #plataforma .plataforma-here {
-    top: 12px !important;
-    font-size: 18px !important;
-  }
-
-}
-
-@media (max-width: 767px) {
-  #plataforma .plataforma-ring {
-    width: 200px !important;
-    height: 200px !important;
-  }
-
-  #plataforma .plataforma-ring-1 {
-    left: 18px !important;
-    top: 170px !important;
-  }
-
-  #plataforma .plataforma-ring-2 {
-    left: 205px !important;
-    top: 170px !important;
-  }
-
-  #plataforma .plataforma-ring-3 {
-    left: 112px !important;
-    top: 52px !important;
-  }
-
-  #plataforma .plataforma-label-brand {
-    left: 170px !important;
-    top: 212px !important;
-    font-size: 22px !important;
-  }
-
-  #plataforma .plataforma-question {
-    right: 18px !important;
-    top: 255px !important;
-    width: 120px !important;
-    text-align: right !important;
-    font-size: 17px !important;
-    line-height: 1.2 !important;
-  }
-
-  #plataforma .plataforma-here {
-    left: 0 !important;
-    top: 14px !important;
-    font-size: 18px !important;
-  }
-
-  #plataforma .plataforma-label-ai {
-    left: 52px !important;
-    top: 258px !important;
-    width: 120px !important;
-  }
-
-  #plataforma .plataforma-label-social {
-    left: 255px !important;
-    top: 268px !important;
-    width: 120px !important;
-  }
-
-  #plataforma .plataforma-label-automation {
-    left: 148px !important;
-    top: 86px !important;
-    width: 130px !important;
+    display: block !important;
   }
 }
