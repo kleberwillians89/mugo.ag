@@ -1022,10 +1022,10 @@ button {
 
   #plataforma .plataforma-question {
     position: absolute !important;
-    right: 15 !important;
-    top: 400px !important;
+    right: 8px !important;
+    top: 420px !important;
     margin: 0 !important;
-    width: 132px !important;
+    width: 128px !important;
     text-align: right !important;
     font-size: 18px !important;
     line-height: 1.2 !important;
