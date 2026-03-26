@@ -1257,18 +1257,24 @@ button {
 }
 
 @media (max-width: 767px) {
-  .desktop-container {
-    min-width: 320px;
-  }
-
   .hero-section {
-    min-height: 100svh;
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 88px !important;
+    background: #000 !important;
   }
 
   .hero-video-wrap {
-    top: 88px !important;
-    height: calc(100% - 88px) !important;
-    background: #0a0a0a !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    overflow: hidden !important;
+    background: #000 !important;
   }
 
   .hero-video {
@@ -1277,77 +1283,7 @@ button {
     object-fit: contain !important;
     object-position: center center !important;
     transform: none !important;
-  }
-
-  #servicos > img {
-    right: -24vw !important;
-    width: 72vw !important;
-  }
-
-  #plataforma .plataforma-question,
-  #plataforma .plataforma-here {
-    font-size: 18px !important;
-  }
-
-  #sidebar-content.menu-sidebar .sidebar-link p {
-    font-size: 20px !important;
-  }
-
-  .footer-section {
-    padding: 64px 14px 48px;
-    gap: 20px;
-  }
-
-  .footer-section .footer-title-watermark {
-    font-size: clamp(34px, 10.8vw, 42px) !important;
-    line-height: 1 !important;
-    max-width: 11ch;
-    margin-bottom: 14px;
-  }
-
-  .footer-contacts {
-    gap: 14px !important;
-  }
-
-  .footer-contacts a {
-    grid-template-columns: 38px minmax(0, 1fr);
-    font-size: clamp(17px, 5vw, 20px) !important;
-    gap: 10px !important;
-  }
-
-  .footer-contacts a > span:first-child {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px;
-  }
-
-  .footer-contacts a i {
-    font-size: 20px !important;
-  }
-
-  .footer-newsletter {
-    margin-top: 22px;
-    padding: 18px;
-    border: 1px solid rgba(245, 245, 245, 0.22);
-    border-radius: 18px;
-    background: rgba(0, 0, 0, 0.08);
-  }
-
-  .footer-newsletter h3 {
-    font-size: clamp(24px, 7vw, 28px) !important;
-    line-height: 1.12 !important;
-    margin-bottom: 10px !important;
-  }
-
-  .footer-newsletter p {
-    font-size: clamp(15px, 4.2vw, 17px) !important;
-    line-height: 1.45 !important;
-    margin-bottom: 16px !important;
-  }
-
-  .footer-newsletter button {
-    min-height: 52px;
-    border-radius: 16px !important;
+    display: block !important;
   }
 }
 
