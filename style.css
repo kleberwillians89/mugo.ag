@@ -1288,6 +1288,7 @@ button {
 }
 @media (max-width: 767px) {
   .hero-video {
+    height: 62vh !important;
     object-fit: contain !important;
     transform: scale(1.22) !important;
     transform-origin: center 50% !important;
