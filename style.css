@@ -1271,73 +1271,21 @@ button {
   }
 }
 
-.hero-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
-  min-height: 100dvh;
-  overflow: hidden;
-  background: #0a0a0a;
+html, body {
+  overflow-x: hidden;
 }
 
 .hero-video-wrap {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
+  background: #0a0a0a;
 }
 
-.hero-video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 52%;
-}
-
-/* tablet */
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .hero-section {
-    min-height: 78vh;
-    min-height: 78svh;
-    min-height: 78dvh;
+    min-height: 100svh;
   }
 
   .hero-video {
-    object-position: center center;
-  }
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  .hero-section {
-    min-height: calc(100svh - 72px);
-    min-height: calc(100dvh - 72px);
-  }
-
-  .hero-video-wrap {
-    inset: 0;
-  }
-
-  .hero-video {
-    object-fit: contain;
-    object-position: center center;
-    background: #0a0a0a;
-  }
-}
-
-/* iPhone / Android menores */
-@media (max-width: 430px) {
-  .hero-section {
-    min-height: calc(88svh - 68px);
-    min-height: calc(88dvh - 68px);
-  }
-
-  .hero-video {
-    object-fit: contain;
-    object-position: center;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 }

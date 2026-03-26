@@ -28,25 +28,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-    <body class="font-sans antialiased text-[#222]">
-        <div class="desktop-container">
-        <div class="content-stretch flex flex-col items-start relative w-full min-h-screen overflow-hidden hero-section">
-    
-            <!-- Head -->
-            <div class="w-full flex justify-center bg-[#0a0a0a] overflow-hidden">
-            <div class="absolute inset-0 w-full h-full overflow-hidden z-0 hero-video-wrap">
-                <video
-                id="heroVideo"
-                class="w-full h-full object-cover hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                >
-                <source src="assets/logoanimado.mp4" type="video/mp4" />
-                </video>
-            </div>
-            </div>
+<body class="font-sans antialiased text-[#222]">
+    <div class="desktop-container">
+    <!-- Landing Page Content -->
+    <div class="content-stretch flex flex-col items-start relative w-full xl:w-[1440px] h-[100svh] md:h-[760px] overflow-hidden hero-section">
+
+        <!-- Head -->
+        <div class="w-full flex justify-center bg-[#0a0a0a] overflow-hidden">
+        <div class="absolute left-0 top-[72px] md:top-[96px] w-full xl:w-[1440px] h-[calc(100svh-72px)] md:h-[664px] overflow-hidden z-0 hero-video-wrap">
+            <video
+            id="heroVideo"
+            class="w-full h-full object-contain md:object-cover object-center md:object-[50%_52%] hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            >
+            <source src="assets/logoanimado.mp4" type="video/mp4" />
+            </video>
+        </div>
+        </div>
             <!-- Navbar -->
             <div
                 class="site-header absolute border-[#5b6770] border-[0.5px] border-solid h-[96px] left-0 overflow-clip top-0 w-[1440px] z-40 bg-[#f5f5f5]">
@@ -633,26 +634,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Consent-gated scripts (futura integração) -->
-    <!--
-    <script
-        type="text/plain"
-        data-consent-category="analytics"
-        data-consent-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
-    ></script>
-
-    <script type="text/plain" data-consent-category="analytics">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXX');
-    </script>
-
-    <script type="text/plain" data-consent-category="marketing">
-        // Meta Pixel (exemplo) aqui
-    </script>
-    -->
 
     <!-- Script for interaction -->
     <script src="script.js"></script>
