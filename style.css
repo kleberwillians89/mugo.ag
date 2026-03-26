@@ -1030,6 +1030,20 @@ button {
     font-size: 18px !important;
     line-height: 1.2 !important;
   }
+  .estamos-aqui {
+    position: relative;
+    left: 15px;
+  }
+  
+  .mugo {
+    position: relative;
+    left: 30px;
+  }
+  
+  .e-voce {
+    position: relative;
+    top: 20px;
+  }
 
   #plataforma .plataforma-circles {
     width: 100%;
