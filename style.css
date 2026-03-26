@@ -1013,7 +1013,7 @@ button {
   #plataforma .plataforma-here {
     position: absolute !important;
     left: 0 !important;
-    top: 0 !important;
+    top: 20 !important;
     margin: 0 !important;
     width: auto !important;
     text-align: left !important;
@@ -1023,27 +1023,14 @@ button {
   #plataforma .plataforma-question {
     position: absolute !important;
     right: 8px !important;
-    top: 420px !important;
+    top: 450px !important;
     margin: 0 !important;
     width: 128px !important;
     text-align: right !important;
     font-size: 18px !important;
     line-height: 1.2 !important;
   }
-  .estamos-aqui {
-    position: relative;
-    left: 15px;
-  }
   
-  .mugo {
-    position: relative;
-    left: 30px;
-  }
-  
-  .e-voce {
-    position: relative;
-    top: 20px;
-  }
 
   #plataforma .plataforma-circles {
     width: 100%;
@@ -1102,8 +1089,8 @@ button {
   }
 
   #plataforma .plataforma-label-brand {
-    left: 155px !important;
-    top: 198px !important;
+    left: 120px !important;
+    top: 220px !important;
     font-size: 24px !important;
     text-align: center !important;
   }
