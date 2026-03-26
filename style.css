@@ -1145,8 +1145,8 @@ button {
     min-width: 0;
     line-height: 1.25;
     white-space: normal;
-    word-break: keep-all;
-    overflow-wrap: break-word;
+    word-break: normal;
+    overflow-wrap: anywhere;
   }
 
   .footer-contacts a i {
