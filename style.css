@@ -1358,3 +1358,64 @@ button {
   }
 
 }
+
+@media (max-width: 767px) {
+  #plataforma .plataforma-ring {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  #plataforma .plataforma-ring-1 {
+    left: 18px !important;
+    top: 170px !important;
+  }
+
+  #plataforma .plataforma-ring-2 {
+    left: 205px !important;
+    top: 170px !important;
+  }
+
+  #plataforma .plataforma-ring-3 {
+    left: 112px !important;
+    top: 52px !important;
+  }
+
+  #plataforma .plataforma-label-brand {
+    left: 170px !important;
+    top: 212px !important;
+    font-size: 22px !important;
+  }
+
+  #plataforma .plataforma-question {
+    right: 18px !important;
+    top: 255px !important;
+    width: 120px !important;
+    text-align: right !important;
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+  }
+
+  #plataforma .plataforma-here {
+    left: 0 !important;
+    top: 14px !important;
+    font-size: 18px !important;
+  }
+
+  #plataforma .plataforma-label-ai {
+    left: 52px !important;
+    top: 258px !important;
+    width: 120px !important;
+  }
+
+  #plataforma .plataforma-label-social {
+    left: 255px !important;
+    top: 268px !important;
+    width: 120px !important;
+  }
+
+  #plataforma .plataforma-label-automation {
+    left: 148px !important;
+    top: 86px !important;
+    width: 130px !important;
+  }
+}
