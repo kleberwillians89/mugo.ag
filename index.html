@@ -28,19 +28,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="font-sans antialiased text-[#222]">
-    <div class="desktop-container">
-        <!-- Landing Page Content -->
-        <div class="content-stretch flex flex-col items-start relative w-[1440px] h-[760px] overflow-hidden hero-section">
-
+    <body class="font-sans antialiased text-[#222]">
+        <div class="desktop-container">
+        <div class="content-stretch flex flex-col items-start relative w-full min-h-screen overflow-hidden hero-section">
+    
             <!-- Head -->
             <div class="w-full flex justify-center bg-[#0a0a0a] overflow-hidden">
-                <div class="absolute left-0 top-[96px] w-[1440px] h-[664px] overflow-hidden z-0 hero-video-wrap">
-                    <video id="heroVideo" class="w-full h-full object-cover object-[50%_52%] hero-video" autoplay muted loop
-                        playsinline>
-                        <source src="assets/logoanimado.mp4" type="video/mp4" />
-                    </video>
-                </div>
+            <div class="absolute inset-0 w-full h-full overflow-hidden z-0 hero-video-wrap">
+                <video
+                id="heroVideo"
+                class="w-full h-full object-cover hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                >
+                <source src="assets/logoanimado.mp4" type="video/mp4" />
+                </video>
+            </div>
             </div>
             <!-- Navbar -->
             <div
