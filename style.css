@@ -1125,13 +1125,28 @@ button {
   }
 
   .footer-contacts a {
+    display: grid !important;
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: center !important;
+    width: 100%;
     font-size: 20px !important;
     gap: 12px !important;
   }
 
-  .footer-contacts a span {
+  .footer-contacts a > span:first-child {
     width: 40px !important;
     height: 40px !important;
+    min-width: 40px;
+  }
+
+  .footer-contacts a > span:last-child {
+    width: auto !important;
+    height: auto !important;
+    min-width: 0;
+    line-height: 1.25;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   .footer-contacts a i {
@@ -1246,6 +1261,24 @@ button {
     min-width: 320px;
   }
 
+  .hero-section {
+    min-height: 100svh;
+  }
+
+  .hero-video-wrap {
+    top: 88px !important;
+    height: calc(100% - 88px) !important;
+    background: #0a0a0a !important;
+  }
+
+  .hero-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+  }
+
   #servicos > img {
     right: -24vw !important;
     width: 72vw !important;
@@ -1259,6 +1292,63 @@ button {
   #sidebar-content.menu-sidebar .sidebar-link p {
     font-size: 20px !important;
   }
+
+  .footer-section {
+    padding: 64px 14px 48px;
+    gap: 20px;
+  }
+
+  .footer-section .footer-title-watermark {
+    font-size: clamp(34px, 10.8vw, 42px) !important;
+    line-height: 1 !important;
+    max-width: 11ch;
+    margin-bottom: 14px;
+  }
+
+  .footer-contacts {
+    gap: 14px !important;
+  }
+
+  .footer-contacts a {
+    grid-template-columns: 38px minmax(0, 1fr);
+    font-size: clamp(17px, 5vw, 20px) !important;
+    gap: 10px !important;
+  }
+
+  .footer-contacts a > span:first-child {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px;
+  }
+
+  .footer-contacts a i {
+    font-size: 20px !important;
+  }
+
+  .footer-newsletter {
+    margin-top: 22px;
+    padding: 18px;
+    border: 1px solid rgba(245, 245, 245, 0.22);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .footer-newsletter h3 {
+    font-size: clamp(24px, 7vw, 28px) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-newsletter p {
+    font-size: clamp(15px, 4.2vw, 17px) !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .footer-newsletter button {
+    min-height: 52px;
+    border-radius: 16px !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1268,291 +1358,5 @@ button {
     animation: none !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
-.hero-video-wrap {
-  background: #0a0a0a;
-}
-
-@media (max-width: 767px) {
-  .hero-section {
-    min-height: 100svh;
-  }
-
-  .hero-video {
-    object-fit: contain !important;
-    object-position: center !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-video-wrap {
-    background: transparent !important;
-  }
-
-  .hero-video {
-    object-fit: cover !important;
-    object-position: center center !important;
-  }
-}
-
-/* MOBILE — não cortar o símbolo */
-@media (max-width: 767px) {
-  .hero-video {
-    object-fit: contain !important;
-    object-position: center center !important;
-    transform: scale(1.15); /* zoom leve pra não ficar pequeno */
-  }
-
-  .hero-video-wrap {
-    background: #0a0a0a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-video-wrap {
-    overflow: hidden !important;
-    background: #0a0a0a !important;
-  }
-
-  .hero-video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    transform: scale(1) !important;
-    display: block;
-  }
-}
-
-@media (max-width: 767px) {
-  /* seção azul / contato */
-  .contact-section,
-  .footer-contact,
-  .newsletter-section,
-  .talk-to-us-section {
-    padding: 32px 20px !important;
-    overflow: hidden !important;
-  }
-
-  /* título grande */
-  .contact-section h2,
-  .footer-contact h2,
-  .newsletter-section h2,
-  .talk-to-us-section h2 {
-    font-size: 44px !important;
-    line-height: 0.95 !important;
-    letter-spacing: -0.02em !important;
-    margin-bottom: 24px !important;
-  }
-
-  /* lista de contatos */
-  .contact-list,
-  .footer-contact-list,
-  .social-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 18px !important;
-    margin-bottom: 28px !important;
-  }
-
-  /* item com ícone + texto */
-  .contact-item,
-  .social-item,
-  .footer-contact-item {
-    display: grid !important;
-    grid-template-columns: 56px 1fr !important;
-    align-items: center !important;
-    column-gap: 16px !important;
-  }
-
-  .contact-item img,
-  .contact-item svg,
-  .social-item img,
-  .social-item svg,
-  .footer-contact-item img,
-  .footer-contact-item svg {
-    width: 44px !important;
-    height: 44px !important;
-  }
-
-  .contact-item a,
-  .contact-item span,
-  .social-item a,
-  .social-item span,
-  .footer-contact-item a,
-  .footer-contact-item span {
-    font-size: 20px !important;
-    line-height: 1.25 !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
-    white-space: normal !important;
-  }
-
-  /* evita telefone/link esmagado verticalmente */
-  a[href*="wa.me"],
-  a[href*="whatsapp"],
-  a[href^="tel:"],
-  a[href^="mailto:"] {
-    white-space: normal !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  /* bloco newsletter */
-  .newsletter-title,
-  .newsletter-section h3,
-  .newsletter-section .title {
-    font-size: 28px !important;
-    line-height: 1.08 !important;
-    margin-bottom: 12px !important;
-  }
-
-  .newsletter-section p,
-  .newsletter-description {
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-    margin-bottom: 20px !important;
-  }
-
-  /* botão */
-  .newsletter-section button,
-  .newsletter-section .btn,
-  .newsletter-section .cta-button {
-    width: 100% !important;
-    min-height: 56px !important;
-    font-size: 18px !important;
-  }
-
-  /* ornamentos de fundo */
-  .contact-section::before,
-  .contact-section::after,
-  .newsletter-section::before,
-  .newsletter-section::after,
-  .bg-symbol,
-  .footer-symbol,
-  .contact-symbol {
-    max-width: 70% !important;
-    opacity: 0.08 !important;
-  }
-}
-
-@media (max-width: 767px) {
-  /* seção azul / contato */
-  .contact-section,
-  .footer-contact,
-  .newsletter-section,
-  .talk-to-us-section {
-    padding: 32px 20px !important;
-    overflow: hidden !important;
-  }
-
-  /* título grande */
-  .contact-section h2,
-  .footer-contact h2,
-  .newsletter-section h2,
-  .talk-to-us-section h2 {
-    font-size: 44px !important;
-    line-height: 0.95 !important;
-    letter-spacing: -0.02em !important;
-    margin-bottom: 24px !important;
-  }
-
-  /* lista de contatos */
-  .contact-list,
-  .footer-contact-list,
-  .social-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 18px !important;
-    margin-bottom: 28px !important;
-  }
-
-  /* item com ícone + texto */
-  .contact-item,
-  .social-item,
-  .footer-contact-item {
-    display: grid !important;
-    grid-template-columns: 56px 1fr !important;
-    align-items: center !important;
-    column-gap: 16px !important;
-  }
-
-  .contact-item img,
-  .contact-item svg,
-  .social-item img,
-  .social-item svg,
-  .footer-contact-item img,
-  .footer-contact-item svg {
-    width: 44px !important;
-    height: 44px !important;
-  }
-
-  .contact-item a,
-  .contact-item span,
-  .social-item a,
-  .social-item span,
-  .footer-contact-item a,
-  .footer-contact-item span {
-    font-size: 20px !important;
-    line-height: 1.25 !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
-    white-space: normal !important;
-  }
-
-  /* evita telefone/link esmagado verticalmente */
-  a[href*="wa.me"],
-  a[href*="whatsapp"],
-  a[href^="tel:"],
-  a[href^="mailto:"] {
-    white-space: normal !important;
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  /* bloco newsletter */
-  .newsletter-title,
-  .newsletter-section h3,
-  .newsletter-section .title {
-    font-size: 28px !important;
-    line-height: 1.08 !important;
-    margin-bottom: 12px !important;
-  }
-
-  .newsletter-section p,
-  .newsletter-description {
-    font-size: 16px !important;
-    line-height: 1.45 !important;
-    margin-bottom: 20px !important;
-  }
-
-  /* botão */
-  .newsletter-section button,
-  .newsletter-section .btn,
-  .newsletter-section .cta-button {
-    width: 100% !important;
-    min-height: 56px !important;
-    font-size: 18px !important;
-  }
-
-  /* ornamentos de fundo */
-  .contact-section::before,
-  .contact-section::after,
-  .newsletter-section::before,
-  .newsletter-section::after,
-  .bg-symbol,
-  .footer-symbol,
-  .contact-symbol {
-    max-width: 70% !important;
-    opacity: 0.08 !important;
   }
 }
