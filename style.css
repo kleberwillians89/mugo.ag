@@ -1011,7 +1011,7 @@ button {
   }
 
   #plataforma .plataforma-here {
-    position: absolute !important;
+    
     left: 1 !important;
     top: 1 !important;
     margin: 0 !important;
@@ -1021,7 +1021,7 @@ button {
   }
 
   #plataforma .plataforma-question {
-    position: absolute !important;
+    
     right: 8px !important;
     top: 500px !important;
     margin: 0 !important;
@@ -1089,7 +1089,7 @@ button {
   }
 
   #plataforma .plataforma-label-brand {
-    left: 180px !important;
+    left: 190px !important;
     top: 200px !important;
     font-size: 24px !important;
     text-align: center !important;
