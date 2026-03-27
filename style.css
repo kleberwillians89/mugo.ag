@@ -1012,8 +1012,8 @@ button {
 
   #plataforma .plataforma-here {
     
-    left: 1 !important;
-    top: 1 !important;
+    left: 10px !important;
+    top: 5px !important;
     margin: 0 !important;
     width: auto !important;
     text-align: left !important;
@@ -1022,9 +1022,9 @@ button {
 
   #plataforma .plataforma-question {
     
-    right: 8px !important;
+    right: 10px !important;
     top: 500px !important;
-    margin: 0 !important;
+    margin: 2 !important;
     width: 128px !important;
     text-align: right !important;
     font-size: 18px !important;
@@ -1089,7 +1089,7 @@ button {
   }
 
   #plataforma .plataforma-label-brand {
-    left: 190px !important;
+    left: 195px !important;
     top: 200px !important;
     font-size: 24px !important;
     text-align: center !important;
