@@ -59,9 +59,7 @@
                     <a href="#servicos"
                         class="header-nav-link font-normal leading-[1.5] relative shrink-0 text-[#5b6770] text-[24px] whitespace-nowrap hover:text-[#b22234] transition-colors"
                         data-i18n="nav.services">Serviços</a>
-                    <a href="#clientes"
-                        class="header-nav-link font-normal leading-[1.5] relative shrink-0 text-[#5b6770] text-[24px] whitespace-nowrap hover:text-[#b22234] transition-colors"
-                        data-i18n="nav.clients">Clientes</a>
+
 
                     <div
                         class="language-switcher content-stretch flex gap-[8px] items-center leading-[1.5] relative shrink-0 text-[24px] whitespace-nowrap"
@@ -472,65 +470,55 @@
                 </div>
 
                 <!-- Menu Sidebar Cards mapped to IDs -->
-                <a href="#plataforma"
-                    class="sidebar-link absolute bg-[#c79830] flex flex-col justify-between left-[48px] p-[32px] rounded-[24px] top-[176px] w-[659px] h-[343px] hover:scale-[1.03] transition-transform shadow-xl">
-                    <div class="w-full flex justify-end">
-                        <i class="ph-bold ph-plus text-[40px] text-white"></i>
-                    </div>
-                    <div class="w-full h-full flex items-end justify-start">
-                        <p class="font-bold text-[32px] leading-[1.5] text-white" data-i18n="sidebar.ai">I.A. Generativa</p>
-                    </div>
-                </a>
+            <button type="button" data-popup="ia"
+            class="sidebar-link absolute bg-[#c79830] flex flex-col justify-between left-[60px] p-[28px] rounded-[22px] top-[158px] w-[630px] h-[325px] hover:scale-[1.03] transition-transform shadow-xl text-left">
+                <div class="w-full flex justify-end">
+                    <i class="ph-bold ph-plus text-[36px] text-white"></i>
+                </div>
+                <div class="w-full h-full flex items-end justify-start">
+                    <p class="font-bold text-[30px] leading-[1.4] text-white">I.A.</p>
+                </div>
+            </button>
 
-                <a href="#servicos"
-                    class="sidebar-link absolute bg-[#b22234] flex flex-col justify-between left-[48px] p-[32px] rounded-[24px] top-[551px] w-[659px] h-[343px] hover:scale-[1.03] transition-transform shadow-xl">
-                    <div class="w-full flex justify-end">
-                        <i class="ph-bold ph-plus text-[40px] text-white"></i>
-                    </div>
-                    <div class="w-full h-full flex flex-col items-start justify-end leading-tight">
-                        <p class="font-bold text-[32px] leading-[1.5] text-white text-left" data-i18n="sidebar.landing">Landing page
-                        </p>
-                        <p class="font-bold text-[32px] leading-[1.5] text-white text-left"
-                            data-i18n="sidebar.ecommerce">E-commerce</p>
-                        <p class="font-bold text-[32px] leading-[1.5] text-white text-left"
-                            data-i18n="sidebar.institutional">Site institucional</p>
-                    </div>
-                </a>
+            <button type="button" data-popup="redes"
+            class="sidebar-link absolute bg-[#b22234] flex flex-col justify-between left-[60px] p-[28px] rounded-[22px] top-[513px] w-[630px] h-[325px] hover:scale-[1.03] transition-transform shadow-xl text-left">
+                <div class="w-full flex justify-end">
+                    <i class="ph-bold ph-plus text-[36px] text-white"></i>
+                </div>
+                <div class="w-full h-full flex flex-col items-start justify-end leading-tight">
+                    <p class="font-bold text-[30px] leading-[1.4] text-white text-left">Redes sociais</p>
+                </div>
+            </button>
 
-                <a href="#plataforma"
-                    class="sidebar-link absolute bg-[#b22234] flex flex-col justify-between left-[739px] p-[32px] rounded-[24px] top-[176px] w-[320px] h-[343px] hover:scale-[1.03] transition-transform shadow-xl">
-                    <div class="w-full flex justify-end">
-                        <i class="ph-bold ph-plus text-[40px] text-white"></i>
-                    </div>
-                    <div class="w-full h-full flex items-end justify-start">
-                        <p class="font-bold text-[32px] leading-[1.5] text-white" data-i18n="sidebar.automation">Automação</p>
-                    </div>
-                </a>
+            <button type="button" data-popup="automacao"
+            class="sidebar-link absolute bg-[#b22234] flex flex-col justify-between left-[722px] p-[28px] rounded-[22px] top-[158px] w-[300px] h-[325px] hover:scale-[1.03] transition-transform shadow-xl text-left">
+                <div class="w-full flex justify-end">
+                    <i class="ph-bold ph-plus text-[36px] text-white"></i>
+                </div>
+                <div class="w-full h-full flex items-end justify-start">
+                    <p class="font-bold text-[30px] leading-[1.4] text-white">Automação</p>
+                </div>
+            </button>
 
-                <a href="#servicos"
-                    class="sidebar-link absolute bg-[#c79830] flex flex-col justify-between left-[739px] p-[32px] rounded-[24px] top-[551px] w-[320px] h-[343px] hover:scale-[1.03] transition-transform shadow-xl">
-                    <div class="w-full flex justify-end">
-                        <i class="ph-bold ph-plus text-[40px] text-white"></i>
-                    </div>
-                    <div class="w-full h-full flex items-end justify-start">
-                        <p class="font-bold text-[32px] leading-[1.5] text-white text-left" data-i18n-html="sidebar.avatar">
-                            Criação de<br>avatar
-                        </p>
-                    </div>
-                </a>
+            <button type="button" data-popup="sites"
+            class="sidebar-link absolute bg-[#c79830] flex flex-col justify-between left-[722px] p-[28px] rounded-[22px] top-[513px] w-[300px] h-[325px] hover:scale-[1.03] transition-transform shadow-xl text-left">
+                <div class="w-full flex justify-end">
+                    <i class="ph-bold ph-plus text-[36px] text-white"></i>
+                </div>
+                <div class="w-full h-full flex items-end justify-start">
+                    <p class="font-bold text-[30px] leading-[1.4] text-white text-left">Sites</p>
+                </div>
+            </button>
 
-                <a href="#clientes"
-                    class="sidebar-link absolute bg-[#004f6e] flex flex-col justify-between left-[1091px] p-[32px] rounded-[24px] top-[176px] w-[318px] h-[718px] hover:scale-[1.03] transition-transform shadow-xl">
-                    <div class="w-full flex justify-end">
-                        <i class="ph-bold ph-plus text-[40px] text-white"></i>
-                    </div>
-                    <div class="w-full h-full flex items-end justify-start">
-                        <p class="font-bold text-[32px] leading-[1.5] text-white" data-i18n="sidebar.consulting">Consultorias</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+            <button type="button" data-popup="consultoria"
+            class="sidebar-link absolute bg-[#004f6e] flex flex-col justify-between left-[1052px] p-[28px] rounded-[22px] top-[158px] w-[290px] h-[680px] hover:scale-[1.03] transition-transform shadow-xl text-left">
+                <div class="w-full flex justify-end">
+                    <i class="ph-bold ph-plus text-[36px] text-white"></i>
+                </div>
+                <div class="w-full h-full flex items-end justify-start">
+                    <p class="font-bold text-[30px] leading-[1.4] text-white">Consultoria</p>
+                </div>
+            </button>
 
     <!-- Cookie Consent -->
     <div id="cookie-consent-banner" class="cookie-banner hidden" role="dialog" aria-live="polite"
@@ -630,6 +618,40 @@
                         data-i18n="cookies.actions.acceptAll">
                         Aceitar tudo
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Service Popup -->
+    <div id="service-popup" class="fixed inset-0 bg-black/50 hidden z-[99999]">
+        <div class="absolute inset-0 flex items-center justify-center p-[20px]">
+            <div id="service-popup-card"
+                class="w-full max-w-[760px] rounded-[24px] p-[32px] md:p-[40px] relative shadow-2xl text-white">
+                <button id="service-popup-close" type="button"
+                    class="absolute top-[16px] right-[16px] text-white/80 hover:text-white text-[28px]"
+                    aria-label="Fechar popup">
+                    ✕
+                </button>
+
+                <p id="service-popup-eyebrow" class="text-[14px] uppercase tracking-[0.18em] opacity-80 mb-[16px]">
+                    Mugô
+                </p>
+
+                <h2 id="service-popup-title" class="text-[32px] md:text-[42px] leading-[1.05] font-bold mb-[20px]">
+                    Título
+                </h2>
+
+                <div id="service-popup-text" class="text-[18px] md:text-[21px] leading-[1.65] space-y-[18px] max-w-[620px]">
+                </div>
+
+                <div class="mt-[28px]">
+                    <a id="service-popup-cta"
+                        href="https://wa.me/5511986531008?text=Oi%2C%20vim%20pelo%20site%20da%20Mug%C3%B4."
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-white text-[#222] px-[22px] py-[12px] rounded-[18px] text-[18px] font-semibold hover:opacity-90 transition-opacity">
+                        Quero saber mais
+                    </a>
                 </div>
             </div>
         </div>

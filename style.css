@@ -1320,3 +1320,104 @@ button {
     display: block !important;
   }
 }
+
+#service-popup-card.popup-gold {
+  background: #c79830;
+}
+
+#service-popup-card.popup-red {
+  background: #b22234;
+}
+
+#service-popup-card.popup-blue {
+  background: #004f6e;
+}
+
+#service-popup-text p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #service-popup-card {
+    border-radius: 20px;
+    padding: 24px;
+  }
+
+  #service-popup-title {
+    font-size: 30px !important;
+  }
+
+  #service-popup-text {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+#sidebar-content.menu-sidebar {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+@media (max-width: 1366px) {
+  #sidebar-content.menu-sidebar {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  #sidebar-content.menu-sidebar .sidebar-link {
+    padding: 24px !important;
+    border-radius: 20px !important;
+  }
+
+  #sidebar-content.menu-sidebar .sidebar-link i {
+    font-size: 34px !important;
+  }
+
+  #sidebar-content.menu-sidebar .sidebar-link p {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* IA */
+  #sidebar-content.menu-sidebar .sidebar-link[data-popup="ia"] {
+    left: 32px !important;
+    top: 135px !important;
+    width: 560px !important;
+    height: 285px !important;
+  }
+
+  /* Redes */
+  #sidebar-content.menu-sidebar .sidebar-link[data-popup="redes"] {
+    left: 32px !important;
+    top: 445px !important;
+    width: 560px !important;
+    height: 285px !important;
+  }
+
+  /* Automação */
+  #sidebar-content.menu-sidebar .sidebar-link[data-popup="automacao"] {
+    left: 620px !important;
+    top: 135px !important;
+    width: 255px !important;
+    height: 285px !important;
+  }
+
+  /* Sites */
+  #sidebar-content.menu-sidebar .sidebar-link[data-popup="sites"] {
+    left: 620px !important;
+    top: 445px !important;
+    width: 255px !important;
+    height: 285px !important;
+  }
+
+  /* Consultoria */
+  #sidebar-content.menu-sidebar .sidebar-link[data-popup="consultoria"] {
+    left: 903px !important;
+    top: 170px !important;
+    width: 225px !important;
+    height: 595px !important;
+  }
+}
