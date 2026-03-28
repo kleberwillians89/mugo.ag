@@ -1514,13 +1514,15 @@ button {
     background: #000 !important;
   }
 
-  .hero-video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center 60% !important;
-    transform: none !important;
-    display: block !important;
+  @media (max-width: 768px) {
+    .hero-video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      transform: translateY(30px) !important;
+      display: block !important;
+    }
   }
 
   .hero-cta {
