@@ -1509,8 +1509,8 @@ button {
       margin-top: 16px !important;
       width: 100% !important;
       height: auto !important;
-      aspect-ratio: 2 / 1.65 !important;
-      padding-bottom: 180px !important;
+      aspect-ratio: 2 / 1.8 !important;
+      padding-bottom: 200px !important;
       overflow: hidden !important;
       background: #000 !important;
     }
@@ -1520,7 +1520,7 @@ button {
       height: 100% !important;
       object-fit: cover !important;
       object-position: center center !important;
-      transform: translateY(60px) !important;
+      transform: translateY(80px) !important;
       display: block !important;
     }
   }
