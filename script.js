@@ -517,6 +517,21 @@ function setupSidebar() {
     return null;
   }
 
+  const animateSidebarItems = () => {
+    const items = document.querySelectorAll('#sidebar-content .sidebar-link');
+
+    items.forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(60px)';
+
+      setTimeout(() => {
+        item.style.transition = 'opacity 0.6s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      }, 200 + index * 250);
+    });
+  };
+
   const setSidebarState = (isOpen) => {
     sidebarContainer.setAttribute('data-open', isOpen ? 'true' : 'false');
     sidebarBackdrop.classList.toggle('opacity-0', !isOpen);
@@ -528,13 +543,16 @@ function setupSidebar() {
     document.body.classList.toggle('menu-open', isOpen);
 
     if (isOpen) {
-      sidebarContent.classList.remove('is-open');
-
       setTimeout(() => {
-        sidebarContent.classList.add('is-open');
-      }, 120);
+        animateSidebarItems();
+      }, 200);
     } else {
-      sidebarContent.classList.remove('is-open');
+      const items = document.querySelectorAll('#sidebar-content .sidebar-link');
+      items.forEach((item) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(60px)';
+        item.style.transition = 'none';
+      });
     }
   };
 
@@ -1430,52 +1448,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupMobileVideoAutoplay() {
-  const heroVideo = document.getElementById('heroVideo');
-  if (!heroVideo) return;
+  const video = document.getElementById("heroVideo");
+  if (!video) return;
 
-  heroVideo.muted = true;
-  heroVideo.defaultMuted = true;
-  heroVideo.autoplay = true;
-  heroVideo.loop = true;
-  heroVideo.playsInline = true;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.autoplay = true;
+  video.loop = true;
+  video.playsInline = true;
 
-  heroVideo.setAttribute('muted', '');
-  heroVideo.setAttribute('autoplay', '');
-  heroVideo.setAttribute('playsinline', '');
-  heroVideo.setAttribute('webkit-playsinline', '');
-  heroVideo.setAttribute('preload', 'auto');
-  heroVideo.removeAttribute('controls');
+  video.removeAttribute("controls");
 
-  const tryPlay = () => {
-    const playPromise = heroVideo.play();
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {});
-    }
+  video.setAttribute("muted", "");
+  video.setAttribute("autoplay", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+
+  const playVideo = () => {
+    video.play().catch(() => {});
   };
 
-  if (heroVideo.readyState >= 2) {
-    tryPlay();
+  if (video.readyState >= 2) {
+    playVideo();
   } else {
-    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
+    video.addEventListener("loadeddata", playVideo, { once: true });
   }
 
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) {
-      tryPlay();
-    }
-  });
-
-  window.addEventListener('pageshow', () => {
-    tryPlay();
-  });
-
-  ['touchstart', 'click', 'scroll'].forEach((eventName) => {
-    document.addEventListener(
-      eventName,
-      () => {
-        tryPlay();
-      },
-      { once: true, passive: true }
-    );
-  });
+  // 🔥 ESSENCIAL PARA IOS
+  document.addEventListener("touchstart", playVideo, { once: true });
+  document.addEventListener("click", playVideo, { once: true });
 }
