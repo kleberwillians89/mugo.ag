@@ -1521,27 +1521,6 @@ button {
   }
 }
 
-/* ===== HERO MOBILE FINAL ===== */
-@media (max-width: 768px) {
-  .hero-section {
-    height: auto !important;
-    min-height: auto !important;
-  }
-
-  .hero-video-wrap {
-    position: relative !important;
-    top: 0 !important;
-    height: auto !important;
-    aspect-ratio: 9 / 16;
-  }
-
-  .hero-video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-section {
     position: relative !important;
