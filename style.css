@@ -1680,10 +1680,10 @@ button {
 @media (max-width: 768px) {
   #sidebar-content.menu-sidebar .sidebar-link {
     opacity: 0;
-    transform: translateY(36px);
+    transform: translateY(60px);
     transition:
-      opacity 0.75s ease,
-      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 0.95s ease,
+      transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
   }
 
@@ -1693,22 +1693,22 @@ button {
   }
 
   #sidebar-content.menu-sidebar.is-open .sidebar-link:nth-of-type(1) {
-    transition-delay: 0.15s;
+    transition-delay: 0.20s;
   }
 
   #sidebar-content.menu-sidebar.is-open .sidebar-link:nth-of-type(2) {
-    transition-delay: 0.38s;
+    transition-delay: 0.50s;
   }
 
   #sidebar-content.menu-sidebar.is-open .sidebar-link:nth-of-type(3) {
-    transition-delay: 0.61s;
+    transition-delay: 0.80s;
   }
 
   #sidebar-content.menu-sidebar.is-open .sidebar-link:nth-of-type(4) {
-    transition-delay: 0.84s;
+    transition-delay: 1.10s;
   }
 
   #sidebar-content.menu-sidebar.is-open .sidebar-link:nth-of-type(5) {
-    transition-delay: 1.07s;
+    transition-delay: 1.40s;
   }
 }
