@@ -1519,7 +1519,7 @@ button {
     height: 100% !important;
     object-fit: contain !important;
     object-position: center center !important;
-    transform: scale(0.78) !important;
+    transform: scale(0.82) !important;
     display: block !important;
     background: #000 !important;
   }
