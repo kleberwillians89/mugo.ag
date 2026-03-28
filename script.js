@@ -1491,3 +1491,19 @@ if (el) {
 
   observer.observe(el);
 }
+
+const sidebar = document.getElementById("sidebar-content");
+const openBtn = document.getElementById("menu-open-btn");
+const closeBtn = document.getElementById("menu-close-btn");
+
+if (sidebar && openBtn) {
+  openBtn.addEventListener("click", () => {
+    sidebar.classList.add("is-open");
+  });
+}
+
+if (sidebar && closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("is-open");
+  });
+}
