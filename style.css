@@ -1503,27 +1503,25 @@ button {
     background: #000 !important;
   }
 
-  @media (max-width: 768px) {
-    .hero-video-wrap {
-      position: relative !important;
-      margin-top: 16px !important;
-      width: 100% !important;
-      height: auto !important;
-      aspect-ratio: 2 / 1.8 !important;
-      padding-bottom: 200px !important;
-      overflow: hidden !important;
-      background: #000 !important;
-    }
-  
-    .hero-video {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center center !important;
-      transform: translateY(140px) !important;
-      display: block !important;
-    }
+  .hero-video-wrap {
+    position: relative !important;
+    margin-top: 16px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 2 / 1.8 !important;
+    overflow: hidden !important;
+    background: #000 !important;
   }
+
+  .hero-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: scale(1) translateY(140px) !important;
+    display: block !important;
+  }
+}
 
   .hero-cta {
     position: absolute !important;
