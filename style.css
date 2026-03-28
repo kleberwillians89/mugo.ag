@@ -1526,6 +1526,13 @@ button {
       display: block !important;
     }
   }
+  @media (max-width: 768px) {
+    .hero-section .hero-video-wrap .hero-video {
+      object-fit: cover !important;
+      object-position: center center !important;
+      transform: scale(0.82) !important;
+    }
+  }
 
   .hero-cta {
     position: absolute !important;
