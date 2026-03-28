@@ -1520,7 +1520,7 @@ button {
       height: 100% !important;
   
       object-fit: cover !important; /* 🔥 chave da solução */
-      object-position: center center !important;
+      object-position:  center 50%;
   
       transform: none !important; /* remove o zoom errado */
       display: block !important;
