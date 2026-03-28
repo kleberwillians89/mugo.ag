@@ -398,7 +398,7 @@
 
         <!-- Modal Newsletter -->
         <div id="modal-newsletter" class="fixed inset-0 bg-black/50 hidden z-[9999]">
-            <div class="absolute inset-0 flex items-center justify-center p-[20px]">
+            <div class="flex items-end justify-center w-full h-full p-[20px]">
                 <div class="newsletter-modal-card bg-white rounded-[16px] p-[32px] w-[400px] max-w-[90%] relative shadow-2xl">
                     <button id="close-newsletter" type="button"
                         class="absolute top-[16px] right-[16px] text-[#999] hover:text-black"
@@ -624,39 +624,38 @@
     </div>
     
     <!-- Service Popup -->
+    <!-- Service Popup -->
     <div id="service-popup" class="fixed inset-0 bg-black/50 hidden z-[99999]">
-        <div class="absolute inset-0 flex items-center justify-center p-[20px]">
-            <div id="service-popup-card"
-                class="w-full max-w-[760px] rounded-[24px] p-[32px] md:p-[40px] relative shadow-2xl text-white">
-                <button id="service-popup-close" type="button"
-                    class="absolute top-[16px] right-[16px] text-white/80 hover:text-white text-[28px]"
-                    aria-label="Fechar popup">
-                    ✕
-                </button>
-
-                <p id="service-popup-eyebrow" class="text-[14px] uppercase tracking-[0.18em] opacity-80 mb-[16px]">
-                    Mugô
-                </p>
-
-                <h2 id="service-popup-title" class="text-[32px] md:text-[42px] leading-[1.05] font-bold mb-[20px]">
-                    Título
-                </h2>
-
-                <div id="service-popup-text" class="text-[18px] md:text-[21px] leading-[1.65] space-y-[18px] max-w-[620px]">
-                </div>
-
-                <div class="mt-[28px]">
-                    <a id="service-popup-cta"
-                        href="https://wa.me/5511986531008?text=Oi%2C%20vim%20pelo%20site%20da%20Mug%C3%B4."
-                        target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center bg-white text-[#222] px-[22px] py-[12px] rounded-[18px] text-[18px] font-semibold hover:opacity-90 transition-opacity">
-                        Quero saber mais
-                    </a>
-                </div>
+        <div class="service-popup-wrap">
+        <div id="service-popup-card" class="service-popup-card text-white">
+            <button id="service-popup-close" type="button" class="service-popup-close" aria-label="Fechar popup">
+            ✕
+            </button>
+    
+            <p id="service-popup-eyebrow" class="service-popup-eyebrow">
+            Mugô
+            </p>
+    
+            <h2 id="service-popup-title" class="service-popup-title">
+            Título
+            </h2>
+    
+            <div id="service-popup-text" class="service-popup-text"></div>
+    
+            <div class="service-popup-actions">
+            <a
+                id="service-popup-cta"
+                href="https://wa.me/5511986531008?text=Oi%2C%20vim%20pelo%20site%20da%20Mug%C3%B4."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="service-popup-cta"
+            >
+                Quero saber mais
+            </a>
             </div>
         </div>
+        </div>
     </div>
-
     <!-- Script for interaction -->
     <script src="script.js"></script>
 </body>
