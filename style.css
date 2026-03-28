@@ -1515,9 +1515,8 @@ button {
   .hero-video {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
-    object-position: center 55% !important;
-    transform: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
     display: block !important;
     background: #000 !important;
   }
