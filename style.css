@@ -1515,7 +1515,7 @@ button {
     background: #000 !important;
   }
 
-  @media (max-width: 768px) {
+
     .hero-video {
       margin-top: 16px !important;
       width: 100% !important;
@@ -1546,5 +1546,5 @@ button {
     text-align: center !important;
     white-space: normal !important;
   }
-}
+
 
