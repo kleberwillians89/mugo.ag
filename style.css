@@ -1514,14 +1514,17 @@ button {
     background: #000 !important;
   }
 
-  .hero-video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    transform: scale(0.90) !important;
-    display: block !important;
-    background: #000 !important;
+  @media (max-width: 768px) {
+    .hero-video {
+      width: 100% !important;
+      height: 100% !important;
+  
+      object-fit: cover !important; /* 🔥 chave da solução */
+      object-position: center center !important;
+  
+      transform: none !important; /* remove o zoom errado */
+      display: block !important;
+    }
   }
 
   .hero-cta {
