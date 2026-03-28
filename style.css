@@ -1502,8 +1502,11 @@ button {
 
   .hero-video-wrap {
     position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 82% !important; /* ajusta aqui */
     height: 100% !important;
     overflow: hidden !important;
     background: #000 !important;
@@ -1513,8 +1516,8 @@ button {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center center !important;
-    transform: scale(1.08) !important;
+    object-position: center 55% !important;
+    transform: none !important;
     display: block !important;
     background: #000 !important;
   }
