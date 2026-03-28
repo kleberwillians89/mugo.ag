@@ -1448,7 +1448,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupMobileVideoAutoplay() {
-  const video = document.getElementById("heroVideo");
+  const video = document.getElementById('heroVideo');
   if (!video) return;
 
   video.muted = true;
@@ -1457,24 +1457,28 @@ function setupMobileVideoAutoplay() {
   video.loop = true;
   video.playsInline = true;
 
-  video.removeAttribute("controls");
-
-  video.setAttribute("muted", "");
-  video.setAttribute("autoplay", "");
-  video.setAttribute("playsinline", "");
-  video.setAttribute("webkit-playsinline", "");
+  video.removeAttribute('controls');
 
   const playVideo = () => {
-    video.play().catch(() => {});
+    const promise = video.play();
+    if (promise && typeof promise.catch === 'function') {
+      promise.catch(() => {});
+    }
+  };
+
+  const onReady = () => {
+    video.classList.add('is-ready');
+    playVideo();
   };
 
   if (video.readyState >= 2) {
-    playVideo();
+    onReady();
   } else {
-    video.addEventListener("loadeddata", playVideo, { once: true });
+    video.addEventListener('loadeddata', onReady, { once: true });
+    video.addEventListener('canplay', onReady, { once: true });
   }
 
-  // 🔥 ESSENCIAL PARA IOS
-  document.addEventListener("touchstart", playVideo, { once: true });
-  document.addEventListener("click", playVideo, { once: true });
+  // 🔥 iOS hack (ESSENCIAL)
+  document.addEventListener('touchstart', playVideo, { once: true });
+  document.addEventListener('click', playVideo, { once: true });
 }

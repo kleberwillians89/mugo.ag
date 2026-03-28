@@ -1694,3 +1694,24 @@ video::-webkit-media-controls-enclosure {
 video::-webkit-media-controls-panel {
   display: none !important;
 }
+
+.hero-video {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hero-video.is-ready {
+  opacity: 1;
+}
+
+.hero-video::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.hero-video::-webkit-media-controls-panel {
+  display: none !important;
+}
