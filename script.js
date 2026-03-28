@@ -526,6 +526,17 @@ function setupSidebar() {
     sidebarContent.classList.toggle('translate-x-[110%]', !isOpen);
     sidebarContent.classList.toggle('translate-x-0', isOpen);
     document.body.classList.toggle('menu-open', isOpen);
+
+    if (isOpen) {
+      sidebarContent.classList.remove('is-open');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          sidebarContent.classList.add('is-open');
+        });
+      });
+    } else {
+      sidebarContent.classList.remove('is-open');
+    }
   };
 
   const openSidebar = () => setSidebarState(true);
@@ -1072,242 +1083,184 @@ function setupCookieConsent() {
   return closePreferencesModal;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  let currentLanguage = getInitialLanguage();
-
-  initConsentApi();
-
-  const changeLanguage = (nextLanguage) => {
-    if (!TRANSLATIONS[nextLanguage]) {
-      return;
-    }
-
-    currentLanguage = nextLanguage;
-    persistLanguage(nextLanguage);
-    applyTranslations(nextLanguage);
-  };
-
-  const languageButtons = document.querySelectorAll('.language-switch[data-lang]');
-  languageButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const selectedLanguage = button.dataset.lang;
-      if (selectedLanguage && selectedLanguage !== currentLanguage) {
-        changeLanguage(selectedLanguage);
-      }
-    });
-  });
-
-  applyTranslations(currentLanguage);
-
-  const closeSidebar = setupSidebar();
-  const closeNewsletterModal = setupNewsletter(() => currentLanguage);
-  const closeCookiePreferencesModal = setupCookieConsent();
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape') {
-      return;
-    }
-
-    if (typeof closeCookiePreferencesModal === 'function') {
-      closeCookiePreferencesModal();
-    }
-
-    if (typeof closeNewsletterModal === 'function') {
-      closeNewsletterModal();
-    }
-
-    if (typeof closeSidebar === 'function') {
-      closeSidebar();
-    }
-  });
-
-  setupServicosAnimation();
-  setupSobreAnimation();
-});
-
-
-const servicePopup = document.getElementById("service-popup");
-const servicePopupCard = document.getElementById("service-popup-card");
-const servicePopupTitle = document.getElementById("service-popup-title");
-const servicePopupText = document.getElementById("service-popup-text");
-const servicePopupClose = document.getElementById("service-popup-close");
-const servicePopupCta = document.getElementById("service-popup-cta");
+const servicePopup = document.getElementById('service-popup');
+const servicePopupCard = document.getElementById('service-popup-card');
+const servicePopupTitle = document.getElementById('service-popup-title');
+const servicePopupText = document.getElementById('service-popup-text');
+const servicePopupClose = document.getElementById('service-popup-close');
+const servicePopupCta = document.getElementById('service-popup-cta');
 
 const popupContent = {
   ia: {
-    colorClass: "popup-gold",
+    colorClass: 'popup-gold',
     pt: {
-      title: "Inteligência artificial aplicada ao seu negócio",
-      cta: "Quero aplicar IA",
+      title: 'Inteligência artificial aplicada ao seu negócio',
+      cta: 'Quero aplicar IA',
       text: [
-        "Inteligência artificial vai além da criação de imagens e vídeos. É o uso de tecnologia para automatizar tarefas, analisar dados e tomar decisões com mais rapidez e precisão, aprendendo com o comportamento do seu negócio e dos seus clientes.",
-        "Hoje, mais de 70% das empresas já utilizam IA, principalmente em marketing, atendimento e operação, áreas que impactam diretamente vendas e crescimento.",
-        "Ela é para quem quer vender mais sem depender de mais equipe, organizar processos, melhorar o atendimento e tomar decisões com base em dados, não em tentativas e erros.",
-        "Na Mugô, aplicamos IA para transformar operação em escala e marca em performance."
+        'Inteligência artificial vai além da criação de imagens e vídeos. É o uso de tecnologia para automatizar tarefas, analisar dados e tomar decisões com mais rapidez e precisão, aprendendo com o comportamento do seu negócio e dos seus clientes.',
+        'Hoje, mais de 70% das empresas já utilizam IA, principalmente em marketing, atendimento e operação, áreas que impactam diretamente vendas e crescimento.',
+        'Ela é para quem quer vender mais sem depender de mais equipe, organizar processos, melhorar o atendimento e tomar decisões com base em dados, não em tentativas e erros.',
+        'Na Mugô, aplicamos IA para transformar operação em escala e marca em performance.'
       ]
     },
     en: {
-      title: "Artificial intelligence applied to your business",
-      cta: "I want to apply AI",
+      title: 'Artificial intelligence applied to your business',
+      cta: 'I want to apply AI',
       text: [
-        "Artificial intelligence goes far beyond creating images and videos. It is the use of technology to automate tasks, analyze data, and make faster, more accurate decisions, learning from your business and your customers’ behavior.",
-        "Today, more than 70% of companies already use AI, especially in marketing, customer service, and operations, areas that directly impact sales and growth.",
-        "It is for businesses that want to sell more without depending on a larger team, organize processes, improve service, and make decisions based on data rather than trial and error.",
-        "At Mugô, we apply AI to turn operations into scale and brand into performance."
+        'Artificial intelligence goes far beyond creating images and videos. It is the use of technology to automate tasks, analyze data, and make faster, more accurate decisions, learning from your business and your customers’ behavior.',
+        'Today, more than 70% of companies already use AI, especially in marketing, customer service, and operations, areas that directly impact sales and growth.',
+        'It is for businesses that want to sell more without depending on a larger team, organize processes, improve service, and make decisions based on data rather than trial and error.',
+        'At Mugô, we apply AI to turn operations into scale and brand into performance.'
       ]
     },
     es: {
-      title: "Inteligencia artificial aplicada a tu negocio",
-      cta: "Quiero aplicar IA",
+      title: 'Inteligencia artificial aplicada a tu negocio',
+      cta: 'Quiero aplicar IA',
       text: [
-        "La inteligencia artificial va mucho más allá de crear imágenes y videos. Es el uso de tecnología para automatizar tareas, analizar datos y tomar decisiones con mayor rapidez y precisión, aprendiendo del comportamiento de tu negocio y de tus clientes.",
-        "Hoy, más del 70% de las empresas ya utilizan IA, principalmente en marketing, atención y operación, áreas que impactan directamente las ventas y el crecimiento.",
-        "Es para negocios que quieren vender más sin depender de un equipo mayor, organizar procesos, mejorar la atención y tomar decisiones basadas en datos, no en intentos y errores.",
-        "En Mugô, aplicamos IA para transformar la operación en escala y la marca en performance."
+        'La inteligencia artificial va mucho más allá de crear imágenes y videos. Es el uso de tecnología para automatizar tareas, analizar datos y tomar decisiones con mayor rapidez y precisión, aprendiendo del comportamiento de tu negocio y de tus clientes.',
+        'Hoy, más del 70% de las empresas ya utilizan IA, principalmente en marketing, atención y operación, áreas que impactan directamente las ventas y el crecimiento.',
+        'Es para negocios que quieren vender más sin depender de un equipo mayor, organizar procesos, mejorar la atención y tomar decisiones basadas en datos, no en intentos y errores.',
+        'En Mugô, aplicamos IA para transformar la operación en escala y la marca en performance.'
       ]
     }
   },
-
   redes: {
-    colorClass: "popup-red",
+    colorClass: 'popup-red',
     pt: {
-      title: "Presença que gera decisão",
-      cta: "Quero fortalecer minha marca",
+      title: 'Presença que gera decisão',
+      cta: 'Quero fortalecer minha marca',
       text: [
-        "Construir presença com estratégia, conteúdo e intenção.",
-        "Hoje, mais de 70% dos consumidores pesquisam uma marca nas redes antes de comprar, e 76% já compraram algo que viram por lá. Seu perfil deixou de ser vitrine. Virou ponto de decisão.",
-        "É para empresas que querem crescer com consistência, fortalecer posicionamento e transformar atenção em venda.",
-        "Na Mugô, unimos estratégia, criação e gestão para atrair o público certo e conduzir cada interação até o resultado."
+        'Construir presença com estratégia, conteúdo e intenção.',
+        'Hoje, mais de 70% dos consumidores pesquisam uma marca nas redes antes de comprar, e 76% já compraram algo que viram por lá. Seu perfil deixou de ser vitrine. Virou ponto de decisão.',
+        'É para empresas que querem crescer com consistência, fortalecer posicionamento e transformar atenção em venda.',
+        'Na Mugô, unimos estratégia, criação e gestão para atrair o público certo e conduzir cada interação até o resultado.'
       ]
     },
     en: {
-      title: "Presence that drives decisions",
-      cta: "I want to strengthen my brand",
+      title: 'Presence that drives decisions',
+      cta: 'I want to strengthen my brand',
       text: [
-        "Building presence with strategy, content, and intention.",
-        "Today, more than 70% of consumers research a brand on social media before buying, and 76% have already purchased something they saw there. Your profile is no longer just a showcase. It has become a decision point.",
-        "It is for companies that want to grow consistently, strengthen positioning, and turn attention into sales.",
-        "At Mugô, we combine strategy, creation, and management to attract the right audience and guide each interaction toward results."
+        'Building presence with strategy, content, and intention.',
+        'Today, more than 70% of consumers research a brand on social media before buying, and 76% have already purchased something they saw there. Your profile is no longer just a showcase. It has become a decision point.',
+        'It is for companies that want to grow consistently, strengthen positioning, and turn attention into sales.',
+        'At Mugô, we combine strategy, creation, and management to attract the right audience and guide each interaction toward results.'
       ]
     },
     es: {
-      title: "Presencia que genera decisión",
-      cta: "Quiero fortalecer mi marca",
+      title: 'Presencia que genera decisión',
+      cta: 'Quiero fortalecer mi marca',
       text: [
-        "Construir presencia con estrategia, contenido e intención.",
-        "Hoy, más del 70% de los consumidores investigan una marca en redes antes de comprar, y el 76% ya compró algo que vio allí. Tu perfil dejó de ser una vitrina. Se convirtió en un punto de decisión.",
-        "Es para empresas que quieren crecer con consistencia, fortalecer su posicionamiento y transformar atención en venta.",
-        "En Mugô, unimos estrategia, creación y gestión para atraer al público correcto y conducir cada interacción hasta el resultado."
+        'Construir presencia con estrategia, contenido e intención.',
+        'Hoy, más del 70% de los consumidores investigan una marca en redes antes de comprar, y el 76% ya compró algo que vio allí. Tu perfil dejó de ser una vitrina. Se convirtió en un punto de decisión.',
+        'Es para empresas que quieren crecer con consistencia, fortalecer su posicionamiento y transformar atención en venta.',
+        'En Mugô, unimos estrategia, creación y gestión para atraer al público correcto y conducir cada interacción hasta el resultado.'
       ]
     }
   },
-
   automacao: {
-    colorClass: "popup-red",
+    colorClass: 'popup-red',
     pt: {
-      title: "Processos que trabalham por você",
-      cta: "Quero automatizar",
+      title: 'Processos que trabalham por você',
+      cta: 'Quero automatizar',
       text: [
-        "Automação é transformar processos manuais em fluxos inteligentes que trabalham por você, do primeiro contato à conversão.",
-        "Hoje, até 80% dos atendimentos podem ser automatizados, e empresas que utilizam automação respondem mais rápido, reduzem custos e não deixam oportunidades passarem.",
-        "É para negócios que querem escalar operação, organizar o atendimento e vender mais sem aumentar equipe.",
-        "Na Mugô, conectamos ferramentas, dados e comunicação para criar jornadas automáticas que acompanham o cliente no tempo certo."
+        'Automação é transformar processos manuais em fluxos inteligentes que trabalham por você, do primeiro contato à conversão.',
+        'Hoje, até 80% dos atendimentos podem ser automatizados, e empresas que utilizam automação respondem mais rápido, reduzem custos e não deixam oportunidades passarem.',
+        'É para negócios que querem escalar operação, organizar o atendimento e vender mais sem aumentar equipe.',
+        'Na Mugô, conectamos ferramentas, dados e comunicação para criar jornadas automáticas que acompanham o cliente no tempo certo.'
       ]
     },
     en: {
-      title: "Processes that work for you",
-      cta: "I want to automate",
+      title: 'Processes that work for you',
+      cta: 'I want to automate',
       text: [
-        "Automation means turning manual processes into smart flows that work for you, from first contact to conversion.",
-        "Today, up to 80% of customer interactions can be automated, and companies that use automation respond faster, reduce costs, and avoid losing opportunities.",
-        "It is for businesses that want to scale operations, organize customer service, and sell more without increasing headcount.",
-        "At Mugô, we connect tools, data, and communication to create automated journeys that follow the customer at the right time."
+        'Automation means turning manual processes into smart flows that work for you, from first contact to conversion.',
+        'Today, up to 80% of customer interactions can be automated, and companies that use automation respond faster, reduce costs, and avoid losing opportunities.',
+        'It is for businesses that want to scale operations, organize customer service, and sell more without increasing headcount.',
+        'At Mugô, we connect tools, data, and communication to create automated journeys that follow the customer at the right time.'
       ]
     },
     es: {
-      title: "Procesos que trabajan por ti",
-      cta: "Quiero automatizar",
+      title: 'Procesos que trabajan por ti',
+      cta: 'Quiero automatizar',
       text: [
-        "La automatización es transformar procesos manuales en flujos inteligentes que trabajan por ti, desde el primer contacto hasta la conversión.",
-        "Hoy, hasta el 80% de las atenciones pueden automatizarse, y las empresas que usan automatización responden más rápido, reducen costos y no dejan pasar oportunidades.",
-        "Es para negocios que quieren escalar la operación, organizar la atención y vender más sin aumentar el equipo.",
-        "En Mugô, conectamos herramientas, datos y comunicación para crear recorridos automáticos que acompañan al cliente en el momento correcto."
+        'La automatización es transformar procesos manuales en flujos inteligentes que trabajan por ti, desde el primer contacto hasta la conversión.',
+        'Hoy, hasta el 80% de las atenciones pueden automatizarse, y las empresas que usan automatización responden más rápido, reducen costos y no dejan pasar oportunidades.',
+        'Es para negocios que quieren escalar la operación, organizar la atención y vender más sin aumentar el equipo.',
+        'En Mugô, conectamos herramientas, datos y comunicación para crear recorridos automáticos que acompañan al cliente en el momento correcto.'
       ]
     }
   },
-
   sites: {
-    colorClass: "popup-gold",
+    colorClass: 'popup-gold',
     pt: {
-      title: "Seu site é onde a decisão acontece",
-      cta: "Quero melhorar meu site",
+      title: 'Seu site é onde a decisão acontece',
+      cta: 'Quero melhorar meu site',
       text: [
-        "Criamos sites, landing pages e e-commerces que ajudam sua marca a se apresentar melhor, seja para vender, se posicionar ou simplesmente ser compreendida.",
-        "Porque, na prática, o site é onde as pessoas vão quando querem entender se você é sério, se faz sentido e se podem confiar.",
-        "Além da estética, pensamos em clareza, estrutura e na forma como sua mensagem chega.",
-        "Para que quem entra entenda rápido, e siga em frente com você.",
-        "É para empresas que querem ter um espaço próprio, bem construído, que represente o que são hoje e sustente o crescimento que vem depois."
+        'Criamos sites, landing pages e e-commerces que ajudam sua marca a se apresentar melhor, seja para vender, se posicionar ou simplesmente ser compreendida.',
+        'Porque, na prática, o site é onde as pessoas vão quando querem entender se você é sério, se faz sentido e se podem confiar.',
+        'Além da estética, pensamos em clareza, estrutura e na forma como sua mensagem chega.',
+        'Para que quem entra entenda rápido, e siga em frente com você.',
+        'É para empresas que querem ter um espaço próprio, bem construído, que represente o que são hoje e sustente o crescimento que vem depois.'
       ]
     },
     en: {
-      title: "Your website is where decisions happen",
-      cta: "I want to improve my website",
+      title: 'Your website is where decisions happen',
+      cta: 'I want to improve my website',
       text: [
-        "We create websites, landing pages, and e-commerce experiences that help your brand present itself better, whether to sell, position itself, or simply be understood.",
-        "Because in practice, the website is where people go when they want to understand whether you are serious, whether it makes sense, and whether they can trust you.",
-        "Beyond aesthetics, we think about clarity, structure, and how your message is delivered.",
-        "So that whoever arrives understands quickly and keeps moving forward with you.",
-        "It is for companies that want a well-built digital space of their own, one that reflects who they are today and supports the growth that comes next."
+        'We create websites, landing pages, and e-commerce experiences that help your brand present itself better, whether to sell, position itself, or simply be understood.',
+        'Because in practice, the website is where people go when they want to understand whether you are serious, whether it makes sense, and whether they can trust you.',
+        'Beyond aesthetics, we think about clarity, structure, and how your message is delivered.',
+        'So that whoever arrives understands quickly and keeps moving forward with you.',
+        'It is for companies that want a well-built digital space of their own, one that reflects who they are today and supports the growth that comes next.'
       ]
     },
     es: {
-      title: "Tu sitio es donde ocurre la decisión",
-      cta: "Quiero mejorar mi sitio",
+      title: 'Tu sitio es donde ocurre la decisión',
+      cta: 'Quiero mejorar mi sitio',
       text: [
-        "Creamos sitios, landing pages y e-commerces que ayudan a tu marca a presentarse mejor, ya sea para vender, posicionarse o simplemente ser comprendida.",
-        "Porque, en la práctica, el sitio es donde las personas van cuando quieren entender si eres serio, si tiene sentido y si pueden confiar.",
-        "Más allá de la estética, pensamos en claridad, estructura y en cómo llega tu mensaje.",
-        "Para que quien entra entienda rápido y siga adelante contigo.",
-        "Es para empresas que quieren tener un espacio propio, bien construido, que represente lo que son hoy y sostenga el crecimiento que viene después."
+        'Creamos sitios, landing pages y e-commerces que ayudan a tu marca a presentarse mejor, ya sea para vender, posicionarse o simplemente ser comprendida.',
+        'Porque, en la práctica, el sitio es donde las personas van cuando quieren entender si eres serio, si tiene sentido y si pueden confiar.',
+        'Más allá de la estética, pensamos en claridad, estructura y en cómo llega tu mensaje.',
+        'Para que quien entra entienda rápido y siga adelante contigo.',
+        'Es para empresas que quieren tener un espacio propio, bien construido, que represente lo que son hoy y sostenga el crecimiento que viene después.'
       ]
     }
   },
-
   consultoria: {
-    colorClass: "popup-blue",
+    colorClass: 'popup-blue',
     pt: {
-      title: "Clareza para crescer",
-      cta: "Quero direcionamento",
+      title: 'Clareza para crescer',
+      cta: 'Quero direcionamento',
       text: [
-        "Na correria do dia a dia, é normal sentir que tem muita coisa pra fazer e pouca certeza do que realmente vai trazer resultado.",
-        "A consultoria é para quem quer organizar as ideias, entender melhor o próprio negócio e tomar decisões com mais segurança, sem carregar tudo sozinho.",
-        "Na Mugô, a gente chega para somar, trazendo um olhar de fora, mais leve, mais estratégico, e ajudando você a encontrar um caminho que faça sentido."
+        'Na correria do dia a dia, é normal sentir que tem muita coisa pra fazer e pouca certeza do que realmente vai trazer resultado.',
+        'A consultoria é para quem quer organizar as ideias, entender melhor o próprio negócio e tomar decisões com mais segurança, sem carregar tudo sozinho.',
+        'Na Mugô, a gente chega para somar, trazendo um olhar de fora, mais leve, mais estratégico, e ajudando você a encontrar um caminho que faça sentido.'
       ]
     },
     en: {
-      title: "Clarity to grow",
-      cta: "I want direction",
+      title: 'Clarity to grow',
+      cta: 'I want direction',
       text: [
-        "In the rush of everyday life, it is normal to feel like there is too much to do and too little certainty about what will actually bring results.",
-        "Consulting is for those who want to organize ideas, better understand their own business, and make decisions with more confidence, without carrying everything alone.",
-        "At Mugô, we come in to add value, bringing an outside perspective that is lighter and more strategic, helping you find a path that truly makes sense."
+        'In the rush of everyday life, it is normal to feel like there is too much to do and too little certainty about what will actually bring results.',
+        'Consulting is for those who want to organize ideas, better understand their own business, and make decisions with more confidence, without carrying everything alone.',
+        'At Mugô, we come in to add value, bringing an outside perspective that is lighter and more strategic, helping you find a path that truly makes sense.'
       ]
     },
     es: {
-      title: "Claridad para crecer",
-      cta: "Quiero dirección",
+      title: 'Claridad para crecer',
+      cta: 'Quiero dirección',
       text: [
-        "En el ritmo del día a día, es normal sentir que hay demasiado por hacer y poca certeza sobre lo que realmente traerá resultados.",
-        "La consultoría es para quienes quieren organizar ideas, entender mejor su propio negocio y tomar decisiones con más seguridad, sin cargar con todo solos.",
-        "En Mugô, llegamos para sumar, aportando una mirada externa, más ligera y más estratégica, y ayudándote a encontrar un camino que tenga sentido."
+        'En el ritmo del día a día, es normal sentir que hay demasiado por hacer y poca certeza sobre lo que realmente traerá resultados.',
+        'La consultoría es para quienes quieren organizar ideas, entender mejor su propio negocio y tomar decisiones con más seguridad, sin cargar con todo solos.',
+        'En Mugô, llegamos para sumar, aportando una mirada externa, más ligera y más estratégica, y ayudándote a encontrar un camino que tenga sentido.'
       ]
     }
   }
 };
 
 function getCurrentLanguage() {
-  const activeLanguageButton = document.querySelector(".language-switch.is-active");
-  return activeLanguageButton?.dataset?.lang || "pt";
+  const activeLanguageButton = document.querySelector('.language-switch.is-active');
+  return activeLanguageButton?.dataset?.lang || 'pt';
 }
 
 function openServicePopup(key) {
@@ -1318,7 +1271,7 @@ function openServicePopup(key) {
   const localized = content[lang] || content.pt;
 
   if (servicePopupCard) {
-    servicePopupCard.classList.remove("popup-gold", "popup-red", "popup-blue");
+    servicePopupCard.classList.remove('popup-gold', 'popup-red', 'popup-blue');
     servicePopupCard.classList.add(content.colorClass);
   }
 
@@ -1333,79 +1286,53 @@ function openServicePopup(key) {
   if (servicePopupText) {
     servicePopupText.innerHTML = localized.text
       .map((paragraph) => `<p>${paragraph}</p>`)
-      .join("");
+      .join('');
   }
 
-  servicePopup.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
+  servicePopup.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeServicePopup() {
   if (!servicePopup) return;
-  servicePopup.classList.add("hidden");
-  document.body.style.overflow = "";
+  servicePopup.classList.add('hidden');
+  document.body.style.overflow = '';
 }
-
-document.querySelectorAll("[data-popup]").forEach((button) => {
-  button.addEventListener("click", () => {
-    openServicePopup(button.dataset.popup);
-  });
-});
-
-if (servicePopupClose) {
-  servicePopupClose.addEventListener("click", closeServicePopup);
-}
-
-if (servicePopup) {
-  servicePopup.addEventListener("click", (e) => {
-    if (e.target === servicePopup) {
-      closeServicePopup();
-    }
-  });
-}
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && servicePopup && !servicePopup.classList.contains("hidden")) {
-    closeServicePopup();
-  }
-});
 
 function setupMobileVideoAutoplay() {
-  const heroVideo = document.getElementById("heroVideo");
+  const heroVideo = document.getElementById('heroVideo');
   if (!heroVideo) return;
 
-  const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+  const isMobile = window.matchMedia('(max-width: 1024px)').matches;
   if (!isMobile) return;
 
   heroVideo.muted = true;
   heroVideo.defaultMuted = true;
-  heroVideo.setAttribute("muted", "");
-  heroVideo.setAttribute("autoplay", "");
-  heroVideo.setAttribute("playsinline", "");
-  heroVideo.setAttribute("webkit-playsinline", "");
+  heroVideo.setAttribute('muted', '');
+  heroVideo.setAttribute('autoplay', '');
+  heroVideo.setAttribute('playsinline', '');
+  heroVideo.setAttribute('webkit-playsinline', '');
 
   const tryPlay = () => {
     const playPromise = heroVideo.play();
-    if (playPromise && typeof playPromise.then === "function") {
-      playPromise.catch(() => {
-        // tenta de novo quando houver interação do usuário
-      });
+    if (playPromise && typeof playPromise.then === 'function') {
+      playPromise.catch(() => {});
     }
   };
 
   if (heroVideo.readyState >= 2) {
     tryPlay();
   } else {
-    heroVideo.addEventListener("loadeddata", tryPlay, { once: true });
+    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
   }
 
-  document.addEventListener("visibilitychange", () => {
+  document.addEventListener('visibilitychange', () => {
     if (!document.hidden) {
       tryPlay();
     }
   });
 
-  ["touchstart", "click", "scroll"].forEach((eventName) => {
+  ['touchstart', 'click', 'scroll'].forEach((eventName) => {
     document.addEventListener(
       eventName,
       () => {
@@ -1415,6 +1342,49 @@ function setupMobileVideoAutoplay() {
     );
   });
 }
+
+function setupPlatformAnimation() {
+  const el = document.getElementById('plataforma');
+  if (!el) return;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          el.classList.add('is-visible');
+          obs.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  observer.observe(el);
+}
+
+document.querySelectorAll('[data-popup]').forEach((button) => {
+  button.addEventListener('click', () => {
+    openServicePopup(button.dataset.popup);
+  });
+});
+
+if (servicePopupClose) {
+  servicePopupClose.addEventListener('click', closeServicePopup);
+}
+
+if (servicePopup) {
+  servicePopup.addEventListener('click', (e) => {
+    if (e.target === servicePopup) {
+      closeServicePopup();
+    }
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && servicePopup && !servicePopup.classList.contains('hidden')) {
+    closeServicePopup();
+  }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   let currentLanguage = getInitialLanguage();
@@ -1448,6 +1418,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeCookiePreferencesModal = setupCookieConsent();
 
   setupMobileVideoAutoplay();
+  setupServicosAnimation();
+  setupSobreAnimation();
+  setupPlatformAnimation();
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') {
@@ -1466,50 +1439,4 @@ document.addEventListener('DOMContentLoaded', () => {
       closeSidebar();
     }
   });
-
-  setupServicosAnimation();
-  setupSobreAnimation();
 });
-
-
-
-// ANIMAÇÃO PLATAFORMA
-const el = document.getElementById("plataforma");
-
-if (el) {
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          el.classList.add("is-visible");
-          obs.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.25 }
-  );
-
-  observer.observe(el);
-}
-
-const sidebar = document.getElementById("sidebar-content");
-const openBtn = document.getElementById("menu-open-btn");
-const closeBtn = document.getElementById("menu-close-btn");
-
-if (sidebar && openBtn) {
-  openBtn.addEventListener("click", () => {
-    sidebar.classList.remove("is-open");
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        sidebar.classList.add("is-open");
-      });
-    });
-  });
-}
-
-if (sidebar && closeBtn) {
-  closeBtn.addEventListener("click", () => {
-    sidebar.classList.remove("is-open");
-  });
-}
