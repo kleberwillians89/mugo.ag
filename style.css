@@ -847,10 +847,8 @@ button {
 }
 
 @media (max-width: 1024px) {
-  .hero-section {
-    min-height: 620px;
-    height: 100svh;
-  }
+  
+
 
   .site-header {
     height: 88px !important;
@@ -859,8 +857,7 @@ button {
   .hero-video-wrap {
     top: 88px !important;
     width: 100% !important;
-    aspect-ratio: 9 / 16 !important;
-    height: calc(100% - 88px) !important;
+    
   }
 
   .header-nav-link {
