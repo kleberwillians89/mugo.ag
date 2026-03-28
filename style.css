@@ -1509,36 +1509,24 @@ button {
     bottom: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 4 / 6.6 !important;
+    aspect-ratio: 2 / 1 !important;
     overflow: hidden !important;
     background: #000 !important;
   }
 
-  @media (max-width: 768px) {
-    .hero-video {
-      width: 100% !important;
-      height: 100% !important;
-  
-      object-fit: center 50%; /* 🔥 chave da solução */
-      object-position:  center 50%;
-  
-      transform: none !important; /* remove o zoom errado */
-      display: block !important;
-    }
-  }
-  @media (max-width: 768px) {
-    .hero-section .hero-video-wrap .hero-video {
-      object-fit: cover !important;
-      object-position: center center !important;
-      transform: scale(0.82) !important;
-    }
+  .hero-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+    display: block !important;
   }
 
   .hero-cta {
     position: absolute !important;
     left: 50% !important;
     right: auto !important;
-    top: auto !important;
     bottom: 14px !important;
     transform: translateX(-50%) !important;
     width: calc(100% - 28px) !important;
