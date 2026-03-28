@@ -1369,3 +1369,104 @@ document.addEventListener("keydown", (e) => {
     closeServicePopup();
   }
 });
+
+function setupMobileVideoAutoplay() {
+  const heroVideo = document.getElementById("heroVideo");
+  if (!heroVideo) return;
+
+  const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+  if (!isMobile) return;
+
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.setAttribute("muted", "");
+  heroVideo.setAttribute("autoplay", "");
+  heroVideo.setAttribute("playsinline", "");
+  heroVideo.setAttribute("webkit-playsinline", "");
+
+  const tryPlay = () => {
+    const playPromise = heroVideo.play();
+    if (playPromise && typeof playPromise.then === "function") {
+      playPromise.catch(() => {
+        // tenta de novo quando houver interação do usuário
+      });
+    }
+  };
+
+  if (heroVideo.readyState >= 2) {
+    tryPlay();
+  } else {
+    heroVideo.addEventListener("loadeddata", tryPlay, { once: true });
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      tryPlay();
+    }
+  });
+
+  ["touchstart", "click", "scroll"].forEach((eventName) => {
+    document.addEventListener(
+      eventName,
+      () => {
+        tryPlay();
+      },
+      { once: true, passive: true }
+    );
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  let currentLanguage = getInitialLanguage();
+
+  initConsentApi();
+
+  const changeLanguage = (nextLanguage) => {
+    if (!TRANSLATIONS[nextLanguage]) {
+      return;
+    }
+
+    currentLanguage = nextLanguage;
+    persistLanguage(nextLanguage);
+    applyTranslations(nextLanguage);
+  };
+
+  const languageButtons = document.querySelectorAll('.language-switch[data-lang]');
+  languageButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const selectedLanguage = button.dataset.lang;
+      if (selectedLanguage && selectedLanguage !== currentLanguage) {
+        changeLanguage(selectedLanguage);
+      }
+    });
+  });
+
+  applyTranslations(currentLanguage);
+
+  const closeSidebar = setupSidebar();
+  const closeNewsletterModal = setupNewsletter(() => currentLanguage);
+  const closeCookiePreferencesModal = setupCookieConsent();
+
+  setupMobileVideoAutoplay();
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') {
+      return;
+    }
+
+    if (typeof closeCookiePreferencesModal === 'function') {
+      closeCookiePreferencesModal();
+    }
+
+    if (typeof closeNewsletterModal === 'function') {
+      closeNewsletterModal();
+    }
+
+    if (typeof closeSidebar === 'function') {
+      closeSidebar();
+    }
+  });
+
+  setupServicosAnimation();
+  setupSobreAnimation();
+});
