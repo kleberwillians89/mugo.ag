@@ -1490,6 +1490,8 @@ button {
     border-radius: 14px !important;
   }
 }
+
+
 @media (max-width: 768px) {
   .hero-section {
     position: relative !important;
@@ -1510,7 +1512,7 @@ button {
     bottom: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 2 / 1.45 !important;
+    aspect-ratio: 2 / 1.5 !important;
     overflow: hidden !important;
     background: #000 !important;
   }
