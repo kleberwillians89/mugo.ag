@@ -1498,7 +1498,13 @@ const closeBtn = document.getElementById("menu-close-btn");
 
 if (sidebar && openBtn) {
   openBtn.addEventListener("click", () => {
-    sidebar.classList.add("is-open");
+    sidebar.classList.remove("is-open");
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        sidebar.classList.add("is-open");
+      });
+    });
   });
 }
 
