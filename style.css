@@ -654,7 +654,7 @@ button {
   #plataforma .plataforma-here {
     position: relative !important;
     left: 15 !important;
-    top: 15 !important;
+    top: 15px !important;
     margin: 0 auto 16px;
     width: 100%;
     text-align: left;
@@ -1005,7 +1005,6 @@ button {
   }
 
   #plataforma .plataforma-here {
-    
     left: 10px !important;
     top: -420px !important;
     margin: 0 !important;
@@ -1015,10 +1014,9 @@ button {
   }
 
   #plataforma .plataforma-question {
-    
     right: 10px !important;
     top: 500px !important;
-    margin: 2 !important;
+    margin: 2px !important;
     width: 128px !important;
     text-align: right !important;
     font-size: 18px !important;
@@ -1527,7 +1525,7 @@ button {
     position: absolute !important;
     left: 50% !important;
     right: auto !important;
-    bottom: 14px !important;
+    bottom: 28px !important;
     transform: translateX(-50%) !important;
     width: calc(100% - 28px) !important;
     max-width: 380px !important;
