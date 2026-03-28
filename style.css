@@ -1520,7 +1520,7 @@ button {
       height: 100% !important;
       object-fit: cover !important;
       object-position: center center !important;
-      transform: translateY(80px) !important;
+      transform: translateY(140px) !important;
       display: block !important;
     }
   }
