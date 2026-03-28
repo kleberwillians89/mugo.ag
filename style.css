@@ -1516,7 +1516,7 @@ button {
     height: 100% !important;
     object-fit: cover !important;
     object-position: center center !important;
-    transform: scale(1) translateY(140px) !important;
+    transform: scale(1) translateY(80px) !important;
     display: block !important;
   }
 
@@ -1525,7 +1525,7 @@ button {
     position: absolute !important;
     left: 50% !important;
     right: auto !important;
-    bottom: 28px !important;
+    bottom: 50px !important;
     transform: translateX(-50%) !important;
     width: calc(100% - 28px) !important;
     max-width: 380px !important;
