@@ -1521,10 +1521,33 @@ button {
   }
 }
 
+/* ===== HERO MOBILE FINAL ===== */
 @media (max-width: 768px) {
   .hero-section {
     height: auto !important;
     min-height: auto !important;
+  }
+
+  .hero-video-wrap {
+    position: relative !important;
+    top: 0 !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16;
+  }
+
+  .hero-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
     padding-top: 88px !important;
     overflow: hidden !important;
     background: #000 !important;
@@ -1538,7 +1561,7 @@ button {
     bottom: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 4 / 5.1 !important;
+    aspect-ratio: 4 / 4.6 !important;
     overflow: hidden !important;
     background: #000 !important;
   }
@@ -1548,7 +1571,7 @@ button {
     height: 100% !important;
     object-fit: contain !important;
     object-position: center center !important;
-    transform: none !important;
+    transform: scale(1.02) !important;
     display: block !important;
     background: #000 !important;
   }
@@ -1557,9 +1580,9 @@ button {
     left: 50% !important;
     right: auto !important;
     top: auto !important;
-    bottom: 16px !important;
+    bottom: 14px !important;
     transform: translateX(-50%) !important;
-    width: calc(100% - 36px) !important;
+    width: calc(100% - 28px) !important;
     max-width: 380px !important;
     padding: 12px 18px !important;
     border-radius: 18px !important;
