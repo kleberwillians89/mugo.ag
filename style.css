@@ -1517,6 +1517,7 @@ button {
 
   @media (max-width: 768px) {
     .hero-video {
+      margin-top: 16px !important;
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
