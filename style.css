@@ -1535,6 +1535,7 @@ button {
     aspect-ratio: 9 / 16;
   }
 
+
   .hero-video {
     width: 100% !important;
     height: 100% !important;
@@ -1558,7 +1559,7 @@ button {
     bottom: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 4 / 4.7 !important;
+    aspect-ratio: 4 / 5 !important;
     overflow: hidden !important;
     background: #000 !important;
   }
@@ -1568,7 +1569,7 @@ button {
     height: 100% !important;
     object-fit: cover !important;
     object-position: center center !important;
-    transform: scale(1.01) !important;
+    transform: scale(0.98) !important;
     display: block !important;
   }
 
