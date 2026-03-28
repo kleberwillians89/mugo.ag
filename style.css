@@ -1548,7 +1548,7 @@ button {
     height: 100% !important;
     object-fit: cover !important;
     object-position: center center !important;
-    transform: scale(0.93) !important;
+    transform: scale(0.85) !important;
     display: block !important;
   }
 
