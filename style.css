@@ -1521,7 +1521,7 @@ button {
     transform: scale(1) translateY(140px) !important;
     display: block !important;
   }
-}
+
 
   .hero-cta {
     position: absolute !important;
@@ -1542,3 +1542,4 @@ button {
     text-align: center !important;
     white-space: normal !important;
   }
+}
