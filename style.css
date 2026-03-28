@@ -1506,7 +1506,7 @@ button {
     bottom: 0 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: 90% !important;
+    width: 150% !important;
     height: 100% !important;
     overflow: hidden !important;
     background: #000 !important;
