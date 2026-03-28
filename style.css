@@ -1503,6 +1503,7 @@ button {
 
   .hero-video-wrap {
     position: relative !important;
+    margin-top: 16px !important;
     top: 0 !important;
     left: 0 !important;
     right: auto !important;
