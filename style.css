@@ -1521,27 +1521,6 @@ button {
   }
 }
 
-/* ===== HERO MOBILE FINAL ===== */
-@media (max-width: 768px) {
-  .hero-section {
-    height: auto !important;
-    min-height: auto !important;
-  }
-
-  .hero-video-wrap {
-    position: relative !important;
-    top: 0 !important;
-    height: auto !important;
-    aspect-ratio: 9 / 16;
-  }
-
-
-  .hero-video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-  }
-}
 @media (max-width: 768px) {
   .hero-section {
     height: auto !important;
@@ -1559,7 +1538,7 @@ button {
     bottom: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 4 / 5 !important;
+    aspect-ratio: 4 / 5.3 !important;
     overflow: hidden !important;
     background: #000 !important;
   }
@@ -1569,7 +1548,7 @@ button {
     height: 100% !important;
     object-fit: cover !important;
     object-position: center center !important;
-    transform: scale(0.98) !important;
+    transform: scale(0.93) !important;
     display: block !important;
   }
 
