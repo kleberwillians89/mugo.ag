@@ -1470,3 +1470,24 @@ document.addEventListener('DOMContentLoaded', () => {
   setupServicosAnimation();
   setupSobreAnimation();
 });
+
+
+
+// ANIMAÇÃO PLATAFORMA
+const el = document.getElementById("plataforma");
+
+if (el) {
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          el.classList.add("is-visible");
+          obs.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  observer.observe(el);
+}
