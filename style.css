@@ -1512,7 +1512,7 @@ button {
     bottom: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 2 / 4 !important;
+    aspect-ratio: 2 / 1.9 !important;
     overflow: hidden !important;
     background: #000 !important;
   }
