@@ -653,7 +653,7 @@ button {
 
   #plataforma .plataforma-here {
     position: relative !important;
-    left: 15 !important;
+    left: 15px !important;
     top: 15px !important;
     margin: 0 auto 16px;
     width: 100%;
@@ -1016,7 +1016,6 @@ button {
   #plataforma .plataforma-question {
     right: 10px !important;
     top: 500px !important;
-    margin: 2px !important;
     width: 128px !important;
     text-align: right !important;
     font-size: 18px !important;
@@ -1518,7 +1517,7 @@ button {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 58% !important;
+    object-position: center 50% !important;
     transform: none !important;
     display: block !important;
     background: #000 !important;
