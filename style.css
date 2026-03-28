@@ -1510,21 +1510,19 @@ button {
     bottom: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 2 / 1.25 !important;
+    aspect-ratio: 2 / 1.45 !important;
     overflow: hidden !important;
     background: #000 !important;
   }
 
-
-    .hero-video {
-      margin-top: 40px !important;
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center center !important;
-      transform: translateY(8px) !important;
-      display: block !important;
-    }
+  .hero-video {
+    margin-top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: translateY(8px) !important;
+    display: block !important;
   }
 
   .hero-cta {
@@ -1546,5 +1544,4 @@ button {
     text-align: center !important;
     white-space: normal !important;
   }
-
-
+}
