@@ -1494,3 +1494,27 @@ function setupMobileVideoAutoplay() {
   document.addEventListener('touchstart', playVideo, { once: true });
   document.addEventListener('click', playVideo, { once: true });
 }
+
+newsletterForm.addEventListener('submit', () => {
+  const language = getCurrentLanguage();
+  newsletterStatus.textContent = getTranslation(language, 'newsletter.form.sending');
+
+  window.dataLayer = window.dataLayer || [];
+  setTimeout(() => {
+    const instagramField = document.getElementById('newsletter-instagram');
+    const hasSocial = Boolean(instagramField && instagramField.value.trim());
+
+    window.dataLayer.push({
+      event: 'form_submit_success',
+      form_name: 'newsletter',
+      lead_type: 'newsletter',
+      has_social: hasSocial,
+      page_path: window.location.pathname
+    });
+  }, 300);
+
+  window.setTimeout(() => {
+    newsletterStatus.textContent = getTranslation(language, 'newsletter.form.success');
+    newsletterForm.reset();
+  }, 1200);
+});
