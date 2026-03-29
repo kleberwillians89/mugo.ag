@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mugô - Website Web</title>
+
+    <!-- Google Tag Manager -->
+    
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-KHFXLVD3'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KHFXLVD3');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +41,11 @@
 </head>
 
 <body class="font-sans antialiased text-[#222]">
+    <!-- Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHFXLVD3"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="desktop-container">
     <!-- Landing Page Content -->
     <div class="content-stretch flex flex-col items-start relative w-full xl:w-[1440px] h-[100svh] md:h-[760px] overflow-hidden hero-section">
@@ -65,7 +82,7 @@
 
                     <div
                         class="language-switcher content-stretch flex gap-[8px] items-center leading-[1.5] relative shrink-0 text-[24px] whitespace-nowrap"
-                        aria-label="Idioma">
+                        data-i18n-aria-label="accessibility.languageSwitcher" aria-label="Idioma">
                         <button type="button" class="language-switch is-active" data-lang="pt" aria-pressed="true"
                             data-i18n="lang.pt">PT</button>
                         <span class="font-normal relative shrink-0 text-[#5b6770]" aria-hidden="true">|</span>
@@ -478,7 +495,7 @@
                     <i class="ph-bold ph-plus text-[36px] text-white"></i>
                 </div>
                 <div class="w-full h-full flex items-end justify-start">
-                    <p class="font-bold text-[30px] leading-[1.4] text-white">I.A.</p>
+                    <p class="font-bold text-[30px] leading-[1.4] text-white" data-i18n="sidebar.ai">I.A.</p>
                 </div>
             </button>
 
@@ -488,7 +505,8 @@
                     <i class="ph-bold ph-plus text-[36px] text-white"></i>
                 </div>
                 <div class="w-full h-full flex flex-col items-start justify-end leading-tight">
-                    <p class="font-bold text-[30px] leading-[1.4] text-white text-left">Redes sociais</p>
+                    <p class="font-bold text-[30px] leading-[1.4] text-white text-left"
+                        data-i18n="sidebar.social">Redes sociais</p>
                 </div>
             </button>
 
@@ -498,7 +516,8 @@
                     <i class="ph-bold ph-plus text-[36px] text-white"></i>
                 </div>
                 <div class="w-full h-full flex items-end justify-start">
-                    <p class="font-bold text-[30px] leading-[1.4] text-white">Automação</p>
+                    <p class="font-bold text-[30px] leading-[1.4] text-white"
+                        data-i18n="sidebar.automation">Automação</p>
                 </div>
             </button>
 
@@ -508,7 +527,8 @@
                     <i class="ph-bold ph-plus text-[36px] text-white"></i>
                 </div>
                 <div class="w-full h-full flex items-end justify-start">
-                    <p class="font-bold text-[30px] leading-[1.4] text-white text-left">Sites</p>
+                    <p class="font-bold text-[30px] leading-[1.4] text-white text-left"
+                        data-i18n="sidebar.sites">Sites</p>
                 </div>
             </button>
 
@@ -518,7 +538,8 @@
                     <i class="ph-bold ph-plus text-[36px] text-white"></i>
                 </div>
                 <div class="w-full h-full flex items-end justify-start">
-                    <p class="font-bold text-[30px] leading-[1.4] text-white">Consultoria</p>
+                    <p class="font-bold text-[30px] leading-[1.4] text-white"
+                        data-i18n="sidebar.consulting">Consultoria</p>
                 </div>
             </button>
 
@@ -630,7 +651,8 @@
     <div id="service-popup" class="fixed inset-0 bg-black/50 hidden z-[99999]">
         <div class="service-popup-wrap">
         <div id="service-popup-card" class="service-popup-card text-white">
-            <button id="service-popup-close" type="button" class="service-popup-close" aria-label="Fechar popup">
+            <button id="service-popup-close" type="button" class="service-popup-close"
+                data-i18n-aria-label="accessibility.closePopup" aria-label="Fechar popup">
             ✕
             </button>
     
