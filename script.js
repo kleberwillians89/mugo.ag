@@ -1397,6 +1397,7 @@ document.querySelectorAll('[data-popup]').forEach((button) => {
     const serviceName = button.dataset.popup;
     const clickText = button.innerText.trim();
 
+    // 🔥 ENVIA PRO GTM
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'click_service',
@@ -1406,6 +1407,9 @@ document.querySelectorAll('[data-popup]').forEach((button) => {
     });
 
     console.log('🔥 click_service enviado:', serviceName);
+
+    // ✅ ESSA LINHA É O QUE FALTAVA
+    openServicePopup(serviceName);
   });
 });
 
