@@ -1394,13 +1394,20 @@ function setupPlatformAnimation() {
 
 document.querySelectorAll('[data-popup]').forEach((button) => {
   button.addEventListener('click', () => {
-    openServicePopup(button.dataset.popup);
+    const serviceName = button.dataset.popup;
+    const clickText = button.innerText.trim();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'click_service',
+      service_name: serviceName,
+      click_text: clickText,
+      page_path: window.location.pathname
+    });
+
+    console.log('🔥 click_service enviado:', serviceName);
   });
 });
-
-if (servicePopupClose) {
-  servicePopupClose.addEventListener('click', closeServicePopup);
-}
 
 if (servicePopup) {
   servicePopup.addEventListener('click', (e) => {
