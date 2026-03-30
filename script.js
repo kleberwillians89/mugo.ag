@@ -1495,23 +1495,23 @@ function setupMobileVideoAutoplay() {
   document.addEventListener('click', playVideo, { once: true });
 }
 
-newsletterForm.addEventListener('submit', () => {
+newsletterForm.addEventListener('submit', (e) => {
   const language = getCurrentLanguage();
   newsletterStatus.textContent = getTranslation(language, 'newsletter.form.sending');
 
-  window.dataLayer = window.dataLayer || [];
-  setTimeout(() => {
-    const instagramField = document.getElementById('newsletter-instagram');
-    const hasSocial = Boolean(instagramField && instagramField.value.trim());
+  const instagramField = document.getElementById('newsletter-instagram');
+  const hasSocial = Boolean(instagramField && instagramField.value.trim());
 
-    window.dataLayer.push({
-      event: 'form_submit_success',
-      form_name: 'newsletter',
-      lead_type: 'newsletter',
-      has_social: hasSocial,
-      page_path: window.location.pathname
-    });
-  }, 300);
+  window.dataLayer = window.dataLayer || [];
+
+  // 🔥 dispara IMEDIATO
+  window.dataLayer.push({
+    event: 'form_submit_success',
+    form_name: 'newsletter',
+    lead_type: 'newsletter',
+    has_social: hasSocial,
+    page_path: window.location.pathname
+  });
 
   window.setTimeout(() => {
     newsletterStatus.textContent = getTranslation(language, 'newsletter.form.success');
