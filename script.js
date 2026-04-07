@@ -524,10 +524,34 @@ function setupSidebar() {
   const menuOpenButton = document.getElementById('menu-open-btn');
   const menuCloseButton = document.getElementById('menu-close-btn');
   const navServicesTrigger = document.getElementById('nav-services-trigger');
+  const sidebarLinks = document.querySelectorAll('#sidebar-content .sidebar-link');
 
   if (!sidebarContainer || !sidebarBackdrop || !sidebarContent) {
     return null;
   }
+
+  const resetSidebarItems = () => {
+    sidebarLinks.forEach((item) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(60px)';
+      item.style.transition = 'none';
+    });
+  };
+
+  const animateSidebarItems = () => {
+    sidebarLinks.forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(60px)';
+      item.style.transition = 'none';
+
+      setTimeout(() => {
+        item.style.transition =
+          'opacity 0.6s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      }, 120 + index * 120);
+    });
+  };
 
   const setSidebarState = (isOpen) => {
     sidebarContainer.setAttribute('data-open', isOpen ? 'true' : 'false');
@@ -541,14 +565,20 @@ function setupSidebar() {
     sidebarContent.classList.toggle('translate-x-0', isOpen);
 
     document.body.classList.toggle('menu-open', isOpen);
+
+    if (isOpen) {
+      animateSidebarItems();
+    } else {
+      resetSidebarItems();
+    }
   };
 
   const openSidebar = () => setSidebarState(true);
   const closeSidebar = () => setSidebarState(false);
 
+  resetSidebarItems();
   setSidebarState(false);
 
-  // 🔥 HAMBURGUER
   if (menuOpenButton) {
     menuOpenButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -556,7 +586,6 @@ function setupSidebar() {
     });
   }
 
-  // 🔥 SERVIÇOS
   if (navServicesTrigger) {
     navServicesTrigger.addEventListener('click', (e) => {
       e.preventDefault();
@@ -564,7 +593,6 @@ function setupSidebar() {
     });
   }
 
-  // 🔥 FECHAR
   if (menuCloseButton) {
     menuCloseButton.addEventListener('click', closeSidebar);
   }
