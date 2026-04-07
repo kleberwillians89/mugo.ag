@@ -524,49 +524,23 @@ function setupSidebar() {
   const menuOpenButton = document.getElementById('menu-open-btn');
   const menuCloseButton = document.getElementById('menu-close-btn');
   const navServicesTrigger = document.getElementById('nav-services-trigger');
-  const sidebarLinks = document.querySelectorAll('#sidebar-content .sidebar-link');
 
   if (!sidebarContainer || !sidebarBackdrop || !sidebarContent) {
     return null;
   }
 
-  const animateSidebarItems = () => {
-    const items = document.querySelectorAll('#sidebar-content .sidebar-link');
-
-    items.forEach((item, index) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(60px)';
-
-      setTimeout(() => {
-        item.style.transition = 'opacity 0.6s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0)';
-      }, 200 + index * 250);
-    });
-  };
-
   const setSidebarState = (isOpen) => {
     sidebarContainer.setAttribute('data-open', isOpen ? 'true' : 'false');
+
     sidebarBackdrop.classList.toggle('opacity-0', !isOpen);
     sidebarBackdrop.classList.toggle('pointer-events-none', !isOpen);
     sidebarBackdrop.classList.toggle('opacity-100', isOpen);
     sidebarBackdrop.classList.toggle('pointer-events-auto', isOpen);
+
     sidebarContent.classList.toggle('translate-x-[110%]', !isOpen);
     sidebarContent.classList.toggle('translate-x-0', isOpen);
-    document.body.classList.toggle('menu-open', isOpen);
 
-    if (isOpen) {
-      setTimeout(() => {
-        animateSidebarItems();
-      }, 200);
-    } else {
-      const items = document.querySelectorAll('#sidebar-content .sidebar-link');
-      items.forEach((item) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(60px)';
-        item.style.transition = 'none';
-      });
-    }
+    document.body.classList.toggle('menu-open', isOpen);
   };
 
   const openSidebar = () => setSidebarState(true);
@@ -574,25 +548,28 @@ function setupSidebar() {
 
   setSidebarState(false);
 
-  if (navServicesTrigger) {
-    navServicesTrigger.addEventListener('click', (event) => {
-      event.preventDefault();
+  // 🔥 HAMBURGUER
+  if (menuOpenButton) {
+    menuOpenButton.addEventListener('click', (e) => {
+      e.preventDefault();
       openSidebar();
     });
   }
 
+  // 🔥 SERVIÇOS
+  if (navServicesTrigger) {
+    navServicesTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openSidebar();
+    });
+  }
+
+  // 🔥 FECHAR
   if (menuCloseButton) {
     menuCloseButton.addEventListener('click', closeSidebar);
   }
 
   sidebarBackdrop.addEventListener('click', closeSidebar);
-
-  sidebarLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      // se quiser fechar ao clicar num card:
-      // closeSidebar();
-    });
-  });
 
   return closeSidebar;
 }
