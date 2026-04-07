@@ -401,6 +401,9 @@ button {
 
 #sidebar-content.menu-sidebar {
   will-change: transform;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .servicos-anim {
@@ -672,14 +675,13 @@ button {
   }
 
   #plataforma .plataforma-circles {
+    width: 100%;
+    max-width: 390px;
+    height: 390px;
+    margin: 56px auto 0;
     position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: 680px;
-    max-width: 100%;
-    height: 430px;
-    margin: 0 auto;
     display: block;
+    left: -10px;
   }
 
   #plataforma .plataforma-ring {
@@ -797,6 +799,20 @@ button {
     font-size: 72px !important;
     white-space: normal !important;
     line-height: 1.05 !important;
+  }
+
+  #sobre-nos {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  #sobre-nos .sobre-watermark {
+    order: -1;
+    margin: 0 0 24px 0 !important;
+  }
+  
+  #sobre-nos .about-content {
+    order: 2;
   }
 
   .footer-section {
@@ -1088,6 +1104,16 @@ button {
 
   #sobre-nos {
     padding: 72px 16px 56px;
+  }
+
+  #sobre-nos .sobre-watermark {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: flex-start !important;
   }
 
   #sobre-nos .about-cards {

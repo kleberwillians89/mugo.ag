@@ -523,6 +523,7 @@ function setupSidebar() {
   const sidebarContent = document.getElementById('sidebar-content');
   const menuOpenButton = document.getElementById('menu-open-btn');
   const menuCloseButton = document.getElementById('menu-close-btn');
+  const navServicesTrigger = document.getElementById('nav-services-trigger');
   const sidebarLinks = document.querySelectorAll('#sidebar-content .sidebar-link');
 
   if (!sidebarContainer || !sidebarBackdrop || !sidebarContent) {
@@ -573,8 +574,11 @@ function setupSidebar() {
 
   setSidebarState(false);
 
-  if (menuOpenButton) {
-    menuOpenButton.addEventListener('click', openSidebar);
+  if (navServicesTrigger) {
+    navServicesTrigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      openSidebar();
+    });
   }
 
   if (menuCloseButton) {
