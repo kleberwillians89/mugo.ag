@@ -1129,6 +1129,7 @@ const servicePopupText = document.getElementById('service-popup-text');
 const servicePopupClose = document.getElementById('service-popup-close');
 const servicePopupCta = document.getElementById('service-popup-cta');
 
+
 const popupContent = {
   ia: {
     colorClass: 'popup-gold',
@@ -1428,6 +1429,10 @@ if (servicePopup) {
       closeServicePopup();
     }
   });
+}
+
+if (servicePopupClose) {
+  servicePopupClose.addEventListener('click', closeServicePopup);
 }
 
 document.addEventListener('keydown', (e) => {
