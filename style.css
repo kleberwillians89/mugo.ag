@@ -675,13 +675,14 @@ button {
   }
 
   #plataforma .plataforma-circles {
-    width: 100%;
-    max-width: 390px;
-    height: 390px;
-    margin: 56px auto 0;
     position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 680px;
+    max-width: 100%;
+    height: 430px;
+    margin: 0 auto;
     display: block;
-    left: -10px;
   }
 
   #plataforma .plataforma-ring {
@@ -1115,7 +1116,7 @@ button {
     display: flex !important;
     justify-content: flex-start !important;
   }
-
+  
   #sobre-nos .about-cards {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
