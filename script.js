@@ -19,6 +19,21 @@ const TRANSLATIONS = {
       about: 'Sobre nós',
       services: 'Serviços',
       clients: 'Clientes',
+      platforms: 'Plataformas Mugô',
+    },
+    platforms: {
+      intelligence: {
+        title: 'Mugô Intelligence',
+        description: 'Diagnóstico estratégico inteligente',
+      },
+      crm: {
+        title: 'Mugô CRM',
+        description: 'Gestão comercial e relacionamento',
+      },
+      iagencia: {
+        title: 'iAgência',
+        description: 'Plataforma operacional da agência',
+      },
     },
     hero: {
       cta: 'Faça um diagnóstico',
@@ -128,6 +143,7 @@ const TRANSLATIONS = {
       openMenu: 'Abrir menu lateral',
       closeMenu: 'Fechar menu lateral',
       languageSwitcher: 'Idioma',
+      platformsMenu: 'Abrir menu Plataformas Mugô',
       closePopup: 'Fechar popup',
       linkedinJulia: 'LinkedIn Julia Portela',
       linkedinDanilo: 'LinkedIn Danilo Portela',
@@ -148,6 +164,21 @@ const TRANSLATIONS = {
       about: 'About us',
       services: 'Services',
       clients: 'Clients',
+      platforms: 'Mugô Platforms',
+    },
+    platforms: {
+      intelligence: {
+        title: 'Mugô Intelligence',
+        description: 'Intelligent strategic diagnosis',
+      },
+      crm: {
+        title: 'Mugô CRM',
+        description: 'Sales and relationship management',
+      },
+      iagencia: {
+        title: 'iAgency',
+        description: 'Agency operations platform',
+      },
     },
     hero: {
       cta: 'Get a diagnosis',
@@ -257,6 +288,7 @@ const TRANSLATIONS = {
       openMenu: 'Open side menu',
       closeMenu: 'Close side menu',
       languageSwitcher: 'Language',
+      platformsMenu: 'Open Mugô Platforms menu',
       closePopup: 'Close popup',
       linkedinJulia: 'LinkedIn Julia Portela',
       linkedinDanilo: 'LinkedIn Danilo Portela',
@@ -277,6 +309,21 @@ const TRANSLATIONS = {
       about: 'Sobre nosotros',
       services: 'Servicios',
       clients: 'Clientes',
+      platforms: 'Plataformas Mugô',
+    },
+    platforms: {
+      intelligence: {
+        title: 'Mugô Intelligence',
+        description: 'Diagnóstico estratégico inteligente',
+      },
+      crm: {
+        title: 'Mugô CRM',
+        description: 'Gestión comercial y relaciones',
+      },
+      iagencia: {
+        title: 'iAgencia',
+        description: 'Plataforma operativa de la agencia',
+      },
     },
     hero: {
       cta: 'Haz un diagnóstico',
@@ -386,6 +433,7 @@ const TRANSLATIONS = {
       openMenu: 'Abrir menú lateral',
       closeMenu: 'Cerrar menú lateral',
       languageSwitcher: 'Idioma',
+      platformsMenu: 'Abrir menú Plataformas Mugô',
       closePopup: 'Cerrar popup',
       linkedinJulia: 'LinkedIn Julia Portela',
       linkedinDanilo: 'LinkedIn Danilo Portela',
@@ -1339,50 +1387,6 @@ function closeServicePopup() {
   document.body.style.overflow = '';
 }
 
-function setupMobileVideoAutoplay() {
-  const heroVideo = document.getElementById('heroVideo');
-  if (!heroVideo) return;
-
-  const isMobile = window.matchMedia('(max-width: 1024px)').matches;
-  if (!isMobile) return;
-
-  heroVideo.muted = true;
-  heroVideo.defaultMuted = true;
-  heroVideo.setAttribute('muted', '');
-  heroVideo.setAttribute('autoplay', '');
-  heroVideo.setAttribute('playsinline', '');
-  heroVideo.setAttribute('webkit-playsinline', '');
-
-  const tryPlay = () => {
-    const playPromise = heroVideo.play();
-    if (playPromise && typeof playPromise.then === 'function') {
-      playPromise.catch(() => {});
-    }
-  };
-
-  if (heroVideo.readyState >= 2) {
-    tryPlay();
-  } else {
-    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) {
-      tryPlay();
-    }
-  });
-
-  ['touchstart', 'click', 'scroll'].forEach((eventName) => {
-    document.addEventListener(
-      eventName,
-      () => {
-        tryPlay();
-      },
-      { once: true, passive: true }
-    );
-  });
-}
-
 function setupPlatformAnimation() {
   const el = document.getElementById('plataforma');
   if (!el) return;
@@ -1530,4 +1534,67 @@ function setupMobileVideoAutoplay() {
   // 🔥 iOS hack (ESSENCIAL)
   document.addEventListener('touchstart', playVideo, { once: true });
   document.addEventListener('click', playVideo, { once: true });
+}
+
+
+const platformsMenuTrigger = document.getElementById('platforms-menu-trigger');
+const platformsDropdown = document.getElementById('platforms-dropdown');
+
+if (platformsMenuTrigger && platformsDropdown) {
+    const openPlatformsMenu = () => {
+        platformsDropdown.classList.remove(
+            'opacity-0',
+            'invisible',
+            'translate-y-[-8px]'
+        );
+
+        platformsDropdown.classList.add(
+            'opacity-100',
+            'visible',
+            'translate-y-0'
+        );
+
+        platformsMenuTrigger.setAttribute('aria-expanded', 'true');
+    };
+
+    const closePlatformsMenu = () => {
+        platformsDropdown.classList.add(
+            'opacity-0',
+            'invisible',
+            'translate-y-[-8px]'
+        );
+
+        platformsDropdown.classList.remove(
+            'opacity-100',
+            'visible',
+            'translate-y-0'
+        );
+
+        platformsMenuTrigger.setAttribute('aria-expanded', 'false');
+    };
+
+    platformsMenuTrigger.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        const isOpen =
+            platformsMenuTrigger.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+            closePlatformsMenu();
+        } else {
+            openPlatformsMenu();
+        }
+    });
+
+    platformsDropdown.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', closePlatformsMenu);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closePlatformsMenu();
+        }
+    });
 }

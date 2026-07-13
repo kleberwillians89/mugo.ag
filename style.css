@@ -1742,3 +1742,455 @@ video::-webkit-media-controls-panel {
 .hero-video::-webkit-media-controls-panel {
   display: none !important;
 }
+
+/* Responsividade complementar para telas abaixo do layout-base de 1440px. */
+.hero-section,
+.services-section,
+.platform-section,
+.about-section,
+.footer-section {
+    width: 100% !important;
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+/* Header sempre ocupa a largura disponível */
+.site-header {
+    width: 100% !important;
+    max-width: 1440px;
+    left: 50% !important;
+    transform: translateX(-50%);
+}
+
+/* Logo um pouco mais para a direita */
+.header-logo-wrap,
+.sidebar-logo-wrap {
+    left: 72px !important;
+}
+
+/* =====================================================
+   TELAS ENTRE 1024px E 1439px
+===================================================== */
+
+@media (max-width: 1439px) {
+
+    /* ---------------- HEADER ---------------- */
+
+    .header-actions {
+        right: 36px !important;
+        gap: 24px !important;
+    }
+
+    .header-logo-wrap,
+    .sidebar-logo-wrap {
+        left: 64px !important;
+    }
+
+    .header-nav-link {
+        font-size: 20px !important;
+    }
+
+    .language-switcher {
+        font-size: 19px !important;
+    }
+
+    .platforms-menu-trigger {
+        padding: 9px 17px !important;
+        font-size: 17px !important;
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero-video-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        left: 0 !important;
+    }
+
+    .hero-cta {
+        left: auto !important;
+        right: 48px !important;
+    }
+
+    /* ---------------- SERVIÇOS ---------------- */
+
+    .services-content {
+        width: calc(100% - 120px) !important;
+        max-width: 1116px !important;
+    }
+
+    .servicos-title p {
+        font-size: clamp(48px, 6vw, 76px) !important;
+    }
+
+    .services-content > div p,
+    .servicos-card p {
+        font-size: clamp(23px, 2.3vw, 32px) !important;
+    }
+
+    /* ---------------- PLATAFORMA ---------------- */
+
+    .plataforma-layout {
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .plataforma-circles {
+        left: 50% !important;
+        top: 80px !important;
+        width: 860px !important;
+        height: 700px !important;
+        transform: translateX(-50%) scale(0.86);
+        transform-origin: top center;
+    }
+
+    .plataforma-here {
+        left: 64px !important;
+    }
+
+    .plataforma-question {
+        left: auto !important;
+        right: 64px !important;
+    }
+
+    /* ---------------- QUEM SOMOS ---------------- */
+
+    .about-content {
+        left: 120px !important;
+        width: calc(100% - 170px) !important;
+        max-width: none !important;
+        align-items: stretch !important;
+    }
+
+    .about-cards {
+        width: 100% !important;
+        gap: 20px !important;
+        overflow: visible !important;
+    }
+
+    .team-card {
+        flex: 1 1 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        padding: 18px !important;
+        gap: 16px !important;
+    }
+
+    .team-card img {
+        width: 100% !important;
+        height: 270px !important;
+    }
+
+    .team-card p {
+        overflow-wrap: anywhere;
+    }
+
+    .sobre-watermark {
+        left: -8px !important;
+    }
+
+    .sobre-watermark p {
+        font-size: 104px !important;
+    }
+
+    /* Esconde setas que não têm função e ocupam espaço */
+    .about-nav-controls {
+        display: none !important;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    .footer-contacts {
+        left: 64px !important;
+    }
+
+    .footer-newsletter {
+        right: 64px !important;
+    }
+}
+
+/* =====================================================
+   MENU LATERAL EM TELAS MENORES QUE 1200px
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .menu-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .sidebar-link {
+        position: relative !important;
+        inset: auto !important;
+        width: auto !important;
+        height: 250px !important;
+        margin: 0 !important;
+    }
+
+    .menu-sidebar {
+        padding:
+            135px
+            52px
+            52px !important;
+
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+        align-content: start !important;
+    }
+
+    .sidebar-header {
+        position: fixed !important;
+    }
+
+    /* Consultoria deixa de ficar cortada */
+    .sidebar-link[data-popup="consultoria"] {
+        grid-column: 1 / -1 !important;
+        height: 220px !important;
+    }
+
+    /* ---------------- QUEM SOMOS ---------------- */
+
+    .about-content {
+        left: 105px !important;
+        width: calc(100% - 135px) !important;
+    }
+
+    .team-card {
+        padding: 16px !important;
+    }
+
+    .team-card img {
+        height: 235px !important;
+    }
+
+    .team-card p {
+        font-size: 14px !important;
+    }
+
+    .team-card div p:first-child {
+        font-size: 17px !important;
+    }
+}
+
+/* =====================================================
+   MENU DE SERVIÇOS — TUDO EM UMA ÚNICA TELA
+===================================================== */
+
+#sidebar-container {
+    height: 100dvh;
+    overflow: hidden !important;
+}
+
+#sidebar-content.menu-sidebar {
+    width: min(1440px, 100vw) !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+
+    padding: 120px 46px 28px !important;
+
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(220px, 0.9fr)
+        minmax(230px, 0.85fr) !important;
+
+    grid-template-rows:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 18px !important;
+
+    overflow: hidden !important;
+    align-content: stretch !important;
+}
+
+/* Header do menu */
+#sidebar-content .sidebar-header {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 96px !important;
+}
+
+/* Remove o posicionamento absoluto dos cards */
+#sidebar-content .sidebar-link {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 24px !important;
+
+    border-radius: 18px !important;
+}
+
+/* Organização dos cards */
+
+#sidebar-content .sidebar-link[data-popup="ia"] {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#sidebar-content .sidebar-link[data-popup="redes"] {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#sidebar-content .sidebar-link[data-popup="automacao"] {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#sidebar-content .sidebar-link[data-popup="sites"] {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#sidebar-content .sidebar-link[data-popup="consultoria"] {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+/* Textos e ícones proporcionais */
+#sidebar-content .sidebar-link p {
+    font-size: clamp(20px, 2vw, 30px) !important;
+}
+
+#sidebar-content .sidebar-link i {
+    font-size: clamp(26px, 2.2vw, 36px) !important;
+}
+
+/* Notebooks com pouca altura */
+@media (min-width: 901px) and (max-height: 760px) {
+    #sidebar-content.menu-sidebar {
+        padding:
+            102px
+            34px
+            18px !important;
+
+        gap: 12px !important;
+    }
+
+    #sidebar-content .sidebar-header {
+        height: 82px !important;
+    }
+
+    #sidebar-content .sidebar-link {
+        padding: 18px !important;
+        border-radius: 16px !important;
+    }
+
+    #sidebar-content .sidebar-link p {
+        font-size: 21px !important;
+    }
+
+    #sidebar-content .sidebar-link i {
+        font-size: 27px !important;
+    }
+}
+
+/* O menu lateral permanece inteiro e sem rolagem em tablets e celulares. */
+@media (max-width: 900px) {
+    #sidebar-content.menu-sidebar {
+        padding: 94px 12px 12px !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: repeat(5, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        overflow: hidden !important;
+    }
+
+    #sidebar-content .sidebar-header {
+        position: absolute !important;
+        height: 82px !important;
+    }
+
+    #sidebar-content .sidebar-link,
+    #sidebar-content .sidebar-link[data-popup] {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        padding: 10px 14px !important;
+        border-radius: 14px !important;
+    }
+
+    #sidebar-content .sidebar-link p {
+        font-size: clamp(15px, 4vw, 20px) !important;
+        line-height: 1.1 !important;
+    }
+
+    #sidebar-content .sidebar-link i {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-logo-wrap {
+        left: 14px !important;
+        height: 36px !important;
+    }
+
+    .header-actions {
+        right: 12px !important;
+        gap: 7px !important;
+    }
+
+    .platforms-menu-trigger {
+        width: 38px;
+        height: 38px;
+        padding: 0 !important;
+        justify-content: center;
+        border-radius: 50% !important;
+    }
+
+    .platforms-menu-trigger > span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .platforms-dropdown {
+        position: fixed !important;
+        top: 76px !important;
+        right: 12px !important;
+        width: min(330px, calc(100vw - 24px)) !important;
+    }
+
+    .language-switcher > span {
+        display: none;
+    }
+
+    .language-switcher {
+        gap: 1px !important;
+    }
+
+    .language-switch {
+        min-width: 28px;
+        min-height: 30px;
+        padding-inline: 2px;
+        font-size: 14px;
+    }
+}

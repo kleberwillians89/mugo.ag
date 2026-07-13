@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mugô Agência | Marketing, Tecnologia, Automação e IA para Marcas</title>
-    <meta name="description" content="A Mugô é uma agência que une marketing, tecnologia, automação e inteligência artificial para ajudar marcas a crescer com mais estratégia, eficiência e resultado.">
+    <meta name="description"que content="A Mugô é uma agência que une marketing, tecnologia, automação e inteligência artificial para ajudar marcas a crescer com mais estratégia, eficiência e resultado.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Mugô Agência">
     <meta name="keywords" content="agência de marketing, agência de marketing digital, automação, inteligência artificial, criação de sites, branding, tecnologia para empresas, crescimento de marcas">
     <link rel="canonical" href="https://www.mugoagencia.com.br/">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
 
     <meta property="og:locale" content="pt_BR">
     <meta property="og:type" content="website">
@@ -18,7 +21,7 @@
     <meta property="og:description" content="Estratégia, tecnologia e direção para marcas que querem crescer com mais clareza, eficiência e resultado.">
     <meta property="og:url" content="https://www.mugoagencia.com.br/">
     <meta property="og:site_name" content="Mugô Agência">
-    <meta property="og:image" content="https://www.mugoagencia.com.br/og-image.jpg">
+    <meta property="og:image" content="https://www.mugoagencia.com.br/assets/favicon.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mugô Agência | Marketing, Tecnologia, Automação e IA para Marcas">
@@ -82,50 +85,173 @@
                 loop
                 playsinline
                 preload="auto"
-                poster="assets/hero-poster.jpg"
             >
-            <source src="assets/logoanimado.mp4" type="video/mp4" />
+            <source src="assets/Mugo-3dnew.mp4" type="video/mp4" />
             </video>
         </div>
         </div>
             <!-- Navbar -->
-            <div
-                class="site-header absolute border-[#5b6770] border-[0.5px] border-solid h-[96px] left-0 overflow-clip top-0 w-[1440px] z-40 bg-[#f5f5f5]">
-                <div
-                    class="header-actions -translate-y-1/2 absolute content-stretch flex gap-[43px] items-center justify-end right-[47.5px] top-1/2">
-                    <a href="#sobre-nos"
-                        class="header-nav-link font-normal leading-[1.5] relative shrink-0 text-[#5b6770] text-[24px] whitespace-nowrap hover:text-[#b22234] transition-colors"
-                        data-i18n="nav.about">Sobre nós</a>
-                        <a href="#"
-                        id="nav-services-trigger"
-                        class="header-nav-link font-normal leading-[1.5] relative shrink-0 text-[#5b6770] text-[24px] whitespace-nowrap hover:text-[#b22234] transition-colors"
-                        data-i18n="nav.services">Serviços</a>
+            <!-- Navbar -->
+        <div
+            class="site-header absolute border-[#5b6770] border-[0.5px] border-solid h-[96px] left-0 overflow-visible top-0 w-[1440px] z-40 bg-[#f5f5f5]">
 
+            <div
+                class="header-actions -translate-y-1/2 absolute content-stretch flex gap-[32px] items-center justify-end right-[47.5px] top-1/2">
+
+                <a href="#sobre-nos"
+                    class="header-nav-link font-normal leading-[1.5] relative shrink-0 text-[#5b6770] text-[24px] whitespace-nowrap hover:text-[#b22234] transition-colors"
+                    data-i18n="nav.about">
+                    Sobre nós
+                </a>
+
+                <a href="#"
+                    id="nav-services-trigger"
+                    class="header-nav-link font-normal leading-[1.5] relative shrink-0 text-[#5b6770] text-[24px] whitespace-nowrap hover:text-[#b22234] transition-colors"
+                    data-i18n="nav.services">
+                    Serviços
+                </a>
+
+                <!-- Plataformas Mugô -->
+                <div class="platforms-menu relative shrink-0">
+
+                    <button
+                        id="platforms-menu-trigger"
+                        type="button"
+                        class="platforms-menu-trigger bg-[#004f6e] text-[#f5f5f5] px-[22px] py-[10px] rounded-[24px] font-semibold leading-[1.5] text-[20px] whitespace-nowrap flex items-center gap-[8px] hover:bg-[#b22234] transition-colors shadow-md"
+                        aria-expanded="false"
+                        data-i18n-aria-label="accessibility.platformsMenu"
+                        aria-label="Abrir menu Plataformas Mugô"
+                        aria-controls="platforms-dropdown">
+
+                        <span data-i18n="nav.platforms">Plataformas Mugô</span>
+                        <i class="ph ph-caret-down text-[18px]"></i>
+                    </button>
 
                     <div
-                        class="language-switcher content-stretch flex gap-[8px] items-center leading-[1.5] relative shrink-0 text-[24px] whitespace-nowrap"
-                        data-i18n-aria-label="accessibility.languageSwitcher" aria-label="Idioma">
-                        <button type="button" class="language-switch is-active" data-lang="pt" aria-pressed="true"
-                            data-i18n="lang.pt">PT</button>
-                        <span class="font-normal relative shrink-0 text-[#5b6770]" aria-hidden="true">|</span>
-                        <button type="button" class="language-switch" data-lang="en" aria-pressed="false"
-                            data-i18n="lang.en">EN</button>
-                        <span class="font-normal relative shrink-0 text-[#5b6770]" aria-hidden="true">|</span>
-                        <button type="button" class="language-switch" data-lang="es" aria-pressed="false"
-                            data-i18n="lang.es">ES</button>
-                    </div>
+                        id="platforms-dropdown"
+                        class="platforms-dropdown absolute right-0 top-[calc(100%+14px)] w-[330px] bg-[#f5f5f5] border border-[#5b6770]/30 rounded-[20px] shadow-2xl p-[12px] opacity-0 invisible translate-y-[-8px] transition-all duration-300 z-[100]">
 
-                    <button id="menu-open-btn" type="button"
-                        class="menu-icon-btn content-stretch flex items-center justify-center relative shrink-0 cursor-pointer ml-[10px] hover:opacity-70 transition-opacity"
-                        data-i18n-aria-label="accessibility.openMenu" aria-label="Abrir menu lateral">
-                        <i class="ph ph-list text-[35px] text-[#5b6770]"></i>
+                        <a href="https://intelligence.mugoagencia.com.br"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-[16px] p-[16px] rounded-[14px] hover:bg-[#c79830]/15 transition-colors">
+
+                            <span
+                                class="w-[48px] h-[48px] rounded-full bg-[#c79830] text-white flex items-center justify-center shrink-0">
+                                <i class="ph ph-brain text-[25px]"></i>
+                            </span>
+
+                            <span class="flex flex-col">
+                                <strong class="text-[#222] text-[18px] leading-[1.3]" data-i18n="platforms.intelligence.title">
+                                    Mugô Intelligence
+                                </strong>
+
+                                <span class="text-[#5b6770] text-[14px] leading-[1.4]" data-i18n="platforms.intelligence.description">
+                                    Diagnóstico estratégico inteligente
+                                </span>
+                            </span>
+                        </a>
+
+                        <a href="https://crm.mugoagencia.com.br"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-[16px] p-[16px] rounded-[14px] hover:bg-[#004f6e]/10 transition-colors">
+
+                            <span
+                                class="w-[48px] h-[48px] rounded-full bg-[#004f6e] text-white flex items-center justify-center shrink-0">
+                                <i class="ph ph-users-three text-[25px]"></i>
+                            </span>
+
+                            <span class="flex flex-col">
+                                <strong class="text-[#222] text-[18px] leading-[1.3]" data-i18n="platforms.crm.title">
+                                    Mugô CRM
+                                </strong>
+
+                                <span class="text-[#5b6770] text-[14px] leading-[1.4]" data-i18n="platforms.crm.description">
+                                    Gestão comercial e relacionamento
+                                </span>
+                            </span>
+                        </a>
+
+                        <a href="https://iagencia.mugoagencia.com.br"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-[16px] p-[16px] rounded-[14px] hover:bg-[#b22234]/10 transition-colors">
+
+                            <span
+                                class="w-[48px] h-[48px] rounded-full bg-[#b22234] text-white flex items-center justify-center shrink-0">
+                                <i class="ph ph-sparkle text-[25px]"></i>
+                            </span>
+
+                            <span class="flex flex-col">
+                                <strong class="text-[#222] text-[18px] leading-[1.3]" data-i18n="platforms.iagencia.title">
+                                    iAgência
+                                </strong>
+
+                                <span class="text-[#5b6770] text-[14px] leading-[1.4]" data-i18n="platforms.iagencia.description">
+                                    Plataforma operacional da agência
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="language-switcher content-stretch flex gap-[8px] items-center leading-[1.5] relative shrink-0 text-[24px] whitespace-nowrap"
+                    data-i18n-aria-label="accessibility.languageSwitcher"
+                    aria-label="Idioma">
+
+                    <button type="button"
+                        class="language-switch is-active"
+                        data-lang="pt"
+                        aria-pressed="true"
+                        data-i18n="lang.pt">
+                        PT
+                    </button>
+
+                    <span class="font-normal relative shrink-0 text-[#5b6770]" aria-hidden="true">
+                        |
+                    </span>
+
+                    <button type="button"
+                        class="language-switch"
+                        data-lang="en"
+                        aria-pressed="false"
+                        data-i18n="lang.en">
+                        EN
+                    </button>
+
+                    <span class="font-normal relative shrink-0 text-[#5b6770]" aria-hidden="true">
+                        |
+                    </span>
+
+                    <button type="button"
+                        class="language-switch"
+                        data-lang="es"
+                        aria-pressed="false"
+                        data-i18n="lang.es">
+                        ES
                     </button>
                 </div>
 
-                <div class="header-logo-wrap -translate-y-1/2 absolute left-[47.5px] top-1/2 h-[52px] flex items-center">
-                    <img src="assets/header logo.png" alt="Mugô Logo" class="h-full object-contain" />
-                </div>
+                <button id="menu-open-btn"
+                    type="button"
+                    class="menu-icon-btn content-stretch flex items-center justify-center relative shrink-0 cursor-pointer ml-[4px] hover:opacity-70 transition-opacity"
+                    data-i18n-aria-label="accessibility.openMenu"
+                    aria-label="Abrir menu lateral">
+
+                    <i class="ph ph-list text-[35px] text-[#5b6770]"></i>
+                </button>
             </div>
+
+            <div
+                class="header-logo-wrap -translate-y-1/2 absolute left-[47.5px] top-1/2 h-[52px] flex items-center">
+
+                <img src="assets/header logo.png"
+                    alt="Mugô Logo"
+                    class="h-full object-contain" />
+            </div>
+        </div>
 
             <!-- CTA -->
             <a
@@ -184,7 +310,7 @@
                     </div>
                 </div>
 
-                <a href="https://calendar.app.google/3qh3MkDtL1q5aETR7" target="_blank" rel="noopener noreferrer"
+                <a href="https://calendar.app.google/vesHHLfvVFs4FHFj8" target="_blank" rel="noopener noreferrer"
                     class="bg-[#f5f5f5] flex items-center justify-center px-[24px] py-[12px] relative rounded-[24px] shrink-0 hover:bg-gray-200 transition-colors shadow-lg servicos-cta">
                     <span class="font-semibold leading-[1.5] text-[#222] text-[24px] whitespace-nowrap"
                         data-i18n="services.cta">
@@ -586,6 +712,9 @@
                         data-i18n="sidebar.consulting">Consultoria</p>
                 </div>
             </button>
+
+            </div>
+        </div>
 
     <!-- Cookie Consent -->
     <div id="cookie-consent-banner" class="cookie-banner hidden" role="dialog" aria-live="polite"
