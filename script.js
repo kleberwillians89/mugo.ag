@@ -34,6 +34,10 @@ const TRANSLATIONS = {
         title: 'iAgência',
         description: 'Plataforma operacional da agência',
       },
+      dados: {
+        title: 'Mugô Dados',
+        description: 'Inteligência e performance em um único painel',
+      },
     },
     hero: {
       cta: 'Faça um diagnóstico',
@@ -56,6 +60,28 @@ const TRANSLATIONS = {
     },
     brand: {
       name: 'Mugô',
+    },
+    mugoDados: {
+      eyebrow: 'PLATAFORMA MUGÔ',
+      title: 'Mugô Dados',
+      headline: 'Inteligência de dados para decisões mais claras.',
+      text: 'O Mugô Dados reúne informações de marketing, mídia, redes sociais e comércio eletrônico em um único ambiente. Cada empresa conecta voluntariamente suas próprias contas e passa a acompanhar métricas, históricos, relatórios e análises de desempenho com mais clareza.',
+      complement: 'Os dados de cada cliente permanecem separados e são utilizados exclusivamente para fornecer o serviço à empresa que concedeu o acesso.',
+      ctaPrimary: 'Conheça o Mugô Dados',
+      ctaSecondary: 'Acessar plataforma',
+      pillars: {
+        media: { title: 'Mídia', description: 'Meta Ads e Google Ads' },
+        social: { title: 'Social', description: 'Instagram e desempenho de conteúdo' },
+        ecommerce: { title: 'Ecommerce', description: 'Receita, pedidos e comportamento comercial' },
+        intelligence: { title: 'Inteligência', description: 'Histórico, leitura executiva e análise de performance' },
+      },
+      page: {
+        heroEyebrow: 'MUGÔ DADOS',
+        heroTitle: 'Dados organizados. Decisões mais claras.',
+        heroText: 'Uma plataforma criada para empresas acompanharem marketing, mídia, redes sociais e vendas em um único ambiente.',
+        heroCtaPrimary: 'Acessar Mugô Dados',
+        heroCtaSecondary: 'Falar com a Mugô',
+      },
     },
     about: {
       watermark: 'QUEM SOMOS',
@@ -80,6 +106,14 @@ const TRANSLATIONS = {
       linkedin: 'Mugô Ag',
       phonePrimary: '(11) 9 7351-0549',
       phoneSecondary: '(11) 9 8653-1008',
+      legal: {
+        mugoDados: 'Mugô Dados',
+        privacy: 'Política de Privacidade',
+        dataDeletion: 'Exclusão de Dados',
+        terms: 'Termos de Uso',
+        contact: 'Contato',
+      },
+      legalNotice: 'Mugô · Serviço operado por AURUM INTELLIGENCE LTDA · CNPJ 63.072.471/0001-25',
     },
     newsletter: {
       title: 'Receba insights da Mugô',
@@ -179,6 +213,10 @@ const TRANSLATIONS = {
         title: 'iAgency',
         description: 'Agency operations platform',
       },
+      dados: {
+        title: 'Mugô Dados',
+        description: 'Intelligence and performance in a single dashboard',
+      },
     },
     hero: {
       cta: 'Get a diagnosis',
@@ -201,6 +239,28 @@ const TRANSLATIONS = {
     },
     brand: {
       name: 'Mugô',
+    },
+    mugoDados: {
+      eyebrow: 'MUGÔ PLATFORM',
+      title: 'Mugô Dados',
+      headline: 'Data intelligence for clearer decisions.',
+      text: 'Mugô Dados brings together marketing, media, social media, and e-commerce information in a single environment. Each company voluntarily connects its own accounts and starts tracking metrics, history, reports, and performance analysis with more clarity.',
+      complement: "Each client's data remains separate and is used exclusively to provide the service to the company that granted access.",
+      ctaPrimary: 'Learn about Mugô Dados',
+      ctaSecondary: 'Access the platform',
+      pillars: {
+        media: { title: 'Media', description: 'Meta Ads and Google Ads' },
+        social: { title: 'Social', description: 'Instagram and content performance' },
+        ecommerce: { title: 'E-commerce', description: 'Revenue, orders, and shopping behavior' },
+        intelligence: { title: 'Intelligence', description: 'History, executive insights, and performance analysis' },
+      },
+      page: {
+        heroEyebrow: 'MUGÔ DADOS',
+        heroTitle: 'Organized data. Clearer decisions.',
+        heroText: 'A platform built for companies to track marketing, media, social media, and sales in a single environment.',
+        heroCtaPrimary: 'Access Mugô Dados',
+        heroCtaSecondary: 'Talk to Mugô',
+      },
     },
     about: {
       watermark: 'WHO WE ARE',
@@ -225,6 +285,14 @@ const TRANSLATIONS = {
       linkedin: 'Mugô Ag',
       phonePrimary: '(11) 9 7351-0549',
       phoneSecondary: '(11) 9 8653-1008',
+      legal: {
+        mugoDados: 'Mugô Dados',
+        privacy: 'Privacy Policy',
+        dataDeletion: 'Data Deletion',
+        terms: 'Terms of Use',
+        contact: 'Contact',
+      },
+      legalNotice: 'Mugô · Service operated by AURUM INTELLIGENCE LTDA · CNPJ 63.072.471/0001-25',
     },
     newsletter: {
       title: 'Get insights from Mugô',
@@ -324,6 +392,10 @@ const TRANSLATIONS = {
         title: 'iAgencia',
         description: 'Plataforma operativa de la agencia',
       },
+      dados: {
+        title: 'Mugô Dados',
+        description: 'Inteligencia y desempeño en un único panel',
+      },
     },
     hero: {
       cta: 'Haz un diagnóstico',
@@ -346,6 +418,28 @@ const TRANSLATIONS = {
     },
     brand: {
       name: 'Mugô',
+    },
+    mugoDados: {
+      eyebrow: 'PLATAFORMA MUGÔ',
+      title: 'Mugô Dados',
+      headline: 'Inteligencia de datos para decisiones más claras.',
+      text: 'Mugô Dados reúne información de marketing, medios, redes sociales y comercio electrónico en un único entorno. Cada empresa conecta voluntariamente sus propias cuentas y pasa a seguir métricas, históricos, informes y análisis de desempeño con más claridad.',
+      complement: 'Los datos de cada cliente permanecen separados y se utilizan exclusivamente para prestar el servicio a la empresa que concedió el acceso.',
+      ctaPrimary: 'Conoce Mugô Dados',
+      ctaSecondary: 'Acceder a la plataforma',
+      pillars: {
+        media: { title: 'Medios', description: 'Meta Ads y Google Ads' },
+        social: { title: 'Social', description: 'Instagram y desempeño de contenido' },
+        ecommerce: { title: 'Ecommerce', description: 'Ingresos, pedidos y comportamiento comercial' },
+        intelligence: { title: 'Inteligencia', description: 'Histórico, lectura ejecutiva y análisis de desempeño' },
+      },
+      page: {
+        heroEyebrow: 'MUGÔ DADOS',
+        heroTitle: 'Datos organizados. Decisiones más claras.',
+        heroText: 'Una plataforma creada para que las empresas sigan marketing, medios, redes sociales y ventas en un único entorno.',
+        heroCtaPrimary: 'Acceder a Mugô Dados',
+        heroCtaSecondary: 'Hablar con Mugô',
+      },
     },
     about: {
       watermark: 'QUIÉNES SOMOS',
@@ -370,6 +464,14 @@ const TRANSLATIONS = {
       linkedin: 'Mugô Ag',
       phonePrimary: '(11) 9 7351-0549',
       phoneSecondary: '(11) 9 8653-1008',
+      legal: {
+        mugoDados: 'Mugô Dados',
+        privacy: 'Política de Privacidad',
+        dataDeletion: 'Eliminación de Datos',
+        terms: 'Términos de Uso',
+        contact: 'Contacto',
+      },
+      legalNotice: 'Mugô · Servicio operado por AURUM INTELLIGENCE LTDA · CNPJ 63.072.471/0001-25',
     },
     newsletter: {
       title: 'Recibe insights de Mugô',
@@ -495,9 +597,11 @@ function applyTranslations(language) {
   const safeLanguage = TRANSLATIONS[language] ? language : DEFAULT_LANGUAGE;
   document.documentElement.lang = LANG_HTML_MAP[safeLanguage] || LANG_HTML_MAP[DEFAULT_LANGUAGE];
 
-  const title = getTranslation(safeLanguage, 'meta.title');
-  if (title) {
-    document.title = title;
+  if (!document.body.hasAttribute('data-static-title')) {
+    const title = getTranslation(safeLanguage, 'meta.title');
+    if (title) {
+      document.title = title;
+    }
   }
 
   document.querySelectorAll('[data-i18n]').forEach((element) => {
