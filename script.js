@@ -30,10 +30,7 @@ const TRANSLATIONS = {
         title: 'Mugô CRM',
         description: 'Gestão comercial e relacionamento',
       },
-      iagencia: {
-        title: 'iAgência',
-        description: 'Plataforma operacional da agência',
-      },
+
       dados: {
         title: 'Mugô Dados',
         description: 'Inteligência e performance em um único painel',
@@ -209,10 +206,7 @@ const TRANSLATIONS = {
         title: 'Mugô CRM',
         description: 'Sales and relationship management',
       },
-      iagencia: {
-        title: 'iAgency',
-        description: 'Agency operations platform',
-      },
+
       dados: {
         title: 'Mugô Dados',
         description: 'Intelligence and performance in a single dashboard',
@@ -388,10 +382,7 @@ const TRANSLATIONS = {
         title: 'Mugô CRM',
         description: 'Gestión comercial y relaciones',
       },
-      iagencia: {
-        title: 'iAgencia',
-        description: 'Plataforma operativa de la agencia',
-      },
+
       dados: {
         title: 'Mugô Dados',
         description: 'Inteligencia y desempeño en un único panel',
