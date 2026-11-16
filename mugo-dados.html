@@ -153,27 +153,6 @@
                             </span>
                         </a>
 
-                        <a href="https://iagencia.ia.br"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="flex items-center gap-[16px] p-[16px] rounded-[14px] hover:bg-[#b22234]/10 transition-colors">
-
-                            <span
-                                class="w-[48px] h-[48px] rounded-full bg-[#b22234] text-white flex items-center justify-center shrink-0">
-                                <i class="ph ph-sparkle text-[25px]"></i>
-                            </span>
-
-                            <span class="flex flex-col">
-                                <strong class="text-[#222] text-[18px] leading-[1.3]" data-i18n="platforms.iagencia.title">
-                                    iAgência
-                                </strong>
-
-                                <span class="text-[#5b6770] text-[14px] leading-[1.4]" data-i18n="platforms.iagencia.description">
-                                    Plataforma operacional da agência
-                                </span>
-                            </span>
-                        </a>
-
                         <a href="/mugo-dados"
                             class="flex items-center gap-[16px] p-[16px] rounded-[14px] hover:bg-[#5b6770]/10 transition-colors">
 
@@ -258,41 +237,46 @@
 
         <main>
 
-            <!-- Hero -->
-            <div class="static-page-section bg-[#f5f5f5]">
-                <div class="static-page-inner flex flex-col items-center text-center gap-[20px]">
-                    <p class="text-[#b22234] font-semibold text-[16px] md:text-[18px] tracking-[0.18em] uppercase"
-                        data-i18n="mugoDados.page.heroEyebrow">
-                        MUGÔ DADOS
-                    </p>
-
-                    <h1 class="text-[#004f6e] font-bold text-[36px] md:text-[56px] leading-[1.15] max-w-[820px]"
-                        data-i18n="mugoDados.page.heroTitle">
-                        Dados organizados. Decisões mais claras.
-                    </h1>
-
-                    <p class="text-[#5b6770] text-[18px] md:text-[20px] leading-[1.6] max-w-[720px]"
-                        data-i18n="mugoDados.page.heroText">
-                        Uma plataforma criada para empresas acompanharem marketing, mídia, redes sociais e vendas em
-                        um único ambiente.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-[16px] mt-[24px] w-full sm:w-auto items-center justify-center">
-                        <a href="https://dados.mugoagencia.com.br" target="_blank" rel="noopener noreferrer"
-                            data-cta-source="mugo_dados_page_hero"
-                            class="w-full sm:w-auto text-center bg-[#004f6e] text-[#f5f5f5] px-[32px] py-[16px] rounded-[24px] font-semibold text-[19px] hover:bg-[#b22234] transition-colors shadow-lg"
-                            data-i18n="mugoDados.page.heroCtaPrimary">
-                            Acessar Mugô Dados
-                        </a>
-                        <a href="https://wa.me/5511986531008?text=Oi%2C%20vim%20pelo%20site%20da%20Mug%C3%B4%20e%20quero%20saber%20mais%20sobre%20o%20Mug%C3%B4%20Dados." target="_blank" rel="noopener noreferrer"
-                            data-cta-source="mugo_dados_page_whatsapp"
-                            class="w-full sm:w-auto text-center border-2 border-[#004f6e] text-[#004f6e] px-[30px] py-[14px] rounded-[24px] font-semibold text-[19px] hover:bg-[#004f6e] hover:text-white transition-colors"
-                            data-i18n="mugoDados.page.heroCtaSecondary">
-                            Falar com a Mugô
-                        </a>
+            <!-- Hero — identidade editorial Mugô -->
+            <section class="static-page-section dados-hero">
+                <div class="static-page-inner dados-hero-layout">
+                    <div class="dados-hero-copy">
+                        <p class="dados-hero-eyebrow" data-i18n="mugoDados.page.heroEyebrow">MUGÔ DADOS</p>
+                        <h1 class="dados-hero-title" data-i18n="mugoDados.page.heroTitle">Dados organizados. Decisões mais claras.</h1>
+                        <p class="dados-hero-description" data-i18n="mugoDados.page.heroText">
+                            Uma plataforma criada para empresas acompanharem marketing, mídia, redes sociais e vendas em um único ambiente.
+                        </p>
+                        <div class="dados-hero-actions">
+                            <a href="https://dados.mugoagencia.com.br" target="_blank" rel="noopener noreferrer"
+                                data-cta-source="mugo_dados_page_hero"
+                                class="dados-cta dados-cta-primary" data-i18n="mugoDados.page.heroCtaPrimary">Acessar Mugô Dados</a>
+                            <a href="https://wa.me/5511986531008?text=Oi%2C%20vim%20pelo%20site%20da%20Mug%C3%B4%20e%20quero%20saber%20mais%20sobre%20o%20Mug%C3%B4%20Dados."
+                                target="_blank" rel="noopener noreferrer"
+                                data-cta-source="mugo_dados_page_whatsapp"
+                                class="dados-cta dados-cta-outline" data-i18n="mugoDados.page.heroCtaSecondary">Falar com a Mugô</a>
+                        </div>
+                    </div>
+                    <div class="dados-hero-art" aria-hidden="true">
+                        <span class="dados-art-orbit dados-art-orbit-one"></span>
+                        <span class="dados-art-orbit dados-art-orbit-two"></span>
+                        <span class="dados-art-star">✳</span>
+                        <div class="dados-art-panel">
+                            <div class="dados-art-panel-header"><span class="dados-art-dots"><i></i><i></i><i></i></span><span>MUGÔ / DADOS</span><span>●</span></div>
+                            <div class="dados-art-kicker">INTELLIGENCE SYSTEM / 001</div>
+                            <div class="dados-art-grid">
+                                <div class="dados-art-chart">
+                                    <div class="dados-art-bars"><i style="--level:32%"></i><i style="--level:59%"></i><i style="--level:44%"></i><i style="--level:78%"></i><i style="--level:63%"></i><i style="--level:89%"></i><i style="--level:73%"></i></div>
+                                    <span>DATA / SIGNAL</span>
+                                </div>
+                                <div class="dados-art-radar"><div class="dados-art-radar-core"></div><span>360°</span></div>
+                            </div>
+                            <div class="dados-art-panel-footer"><span>ORGANIZE</span><span>CONNECT</span><span>UNDERSTAND</span></div>
+                        </div>
+                        <div class="dados-art-sticker">DATA<br/>IS<br/>POWER<span>®</span></div>
                     </div>
                 </div>
-            </div>
+                <div class="dados-hero-bottom" aria-hidden="true"><span>01 / CONNECT</span><span>02 / ANALYZE</span><span>03 / EVOLVE</span></div>
+            </section>
 
             <!-- O que é o Mugô Dados -->
             <div class="static-page-section bg-white">
@@ -420,10 +404,10 @@
                         Os dados de diferentes empresas são mantidos em ambientes separados.
                     </p>
                     <div class="flex flex-wrap gap-[24px] mt-[28px] font-semibold">
-                        <a href="/politica-de-privacidade" class="text-[#004f6e] hover:text-[#b22234] transition-colors underline underline-offset-4">
+                        <a href="https://dados.mugoagencia.com.br/privacidade" class="text-[#004f6e] hover:text-[#b22234] transition-colors underline underline-offset-4">
                             Política de Privacidade
                         </a>
-                        <a href="/exclusao-de-dados" class="text-[#004f6e] hover:text-[#b22234] transition-colors underline underline-offset-4">
+                        <a href="https://dados.mugoagencia.com.br/exclusao-de-dados" class="text-[#004f6e] hover:text-[#b22234] transition-colors underline underline-offset-4">
                             Exclusão de Dados
                         </a>
                     </div>
@@ -532,9 +516,10 @@
             <div class="footer-legal-bar absolute left-[80px] right-[80px] bottom-[32px] z-10 flex flex-col gap-[10px] text-[#f5f5f5]">
                 <div class="flex flex-wrap items-center gap-x-[24px] gap-y-[8px] opacity-80 text-[14px]">
                     <a href="/mugo-dados" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.mugoDados">Mugô Dados</a>
-                    <a href="/politica-de-privacidade" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.privacy">Política de Privacidade</a>
-                    <a href="/exclusao-de-dados" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.dataDeletion">Exclusão de Dados</a>
-                    <a href="/termos-de-uso" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.terms">Termos de Uso</a>
+                    <a href="https://dados.mugoagencia.com.br/privacidade" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.privacy">Política de Privacidade</a>
+                    <a href="https://dados.mugoagencia.com.br/exclusao-de-dados" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.dataDeletion">Exclusão de Dados</a>
+                    <a href="https://dados.mugoagencia.com.br/termos-de-uso" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.terms">Termos de Uso</a>
+                    <a href="/politica-de-privacidade" class="hover:opacity-70 transition-opacity">Privacidade do site</a>
                     <a href="mailto:mugo.agencia@gmail.com" class="hover:opacity-70 transition-opacity" data-i18n="footer.legal.contact">Contato</a>
                 </div>
                 <p class="text-[12px] opacity-60 leading-[1.4]" data-i18n="footer.legalNotice">
